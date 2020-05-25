@@ -117,7 +117,7 @@ public class LoginPage extends JFrame {
 		
 		JLabel backgroundImage = new JLabel("New label");
 		backgroundImage.setBounds(0, 0, 923, 755);
-		backgroundImage.setIcon(new ImageIcon(new ImageIcon("/Users/joaomonge/eclipse-workspace/SwingGUI/assets/POS.jpg").getImage().getScaledInstance(backgroundImage.getWidth(),backgroundImage.getHeight(), Image.SCALE_DEFAULT)));
+		backgroundImage.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\ndrew\\git\\projetofinal\\ProjetoFinal\\POS.jpg").getImage().getScaledInstance(backgroundImage.getWidth(),backgroundImage.getHeight(), Image.SCALE_DEFAULT)));
 		contentPane.add(backgroundImage);
 		
 		setResizable(false);
