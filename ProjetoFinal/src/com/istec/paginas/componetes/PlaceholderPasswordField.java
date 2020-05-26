@@ -1,16 +1,16 @@
-package com.istec.swing;
+package com.istec.paginas.componetes;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 
-import javax.swing.JTextField;
+import javax.swing.JPasswordField;
 
 @SuppressWarnings("serial")
-public class PlaceholderTextField extends JTextField {
+public class PlaceholderPasswordField extends JPasswordField {
 	private String placeholder;
 	
-	public PlaceholderTextField() {
+	public PlaceholderPasswordField() {
 		
 	}
 
