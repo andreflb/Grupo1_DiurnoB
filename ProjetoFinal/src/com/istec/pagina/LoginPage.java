@@ -29,7 +29,6 @@ public class LoginPage extends JFrame {
 	private JPanel contentPane;
 	private PlaceholderTextField username;
 	private PlaceholderPasswordField pwd;
-	private JPanel  hellotest;
 
 	/**
 	 * Launch the application.
