@@ -1,4 +1,4 @@
-package com.istec.swing;
+package com.istec.paginas.componetes;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
