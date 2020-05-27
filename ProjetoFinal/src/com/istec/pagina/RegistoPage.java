@@ -24,6 +24,7 @@ import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Choice;
+import javax.swing.JComboBox;
 
 public class RegistoPage extends JFrame {
 
@@ -35,13 +36,7 @@ public class RegistoPage extends JFrame {
 	private PlaceholderTextField email;
 	private PlaceholderPasswordField cfn;
 
-	/**
-	 * Launch the application.
-	 */
 	
-	/**
-	 * Create the frame.
-	 */
 	public RegistoPage() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 923, 755);
@@ -124,9 +119,12 @@ public class RegistoPage extends JFrame {
 		cfn.setBounds(99, 220, 179, 26);
 		MenuLogin.add(cfn);
 		
-		Choice Tipo_de_vendedor = new Choice();
-		Tipo_de_vendedor.setBounds(99, 255, 179, 20);
-		MenuLogin.add(Tipo_de_vendedor);
+		JComboBox Tipo_vendedor = new JComboBox();
+		Tipo_vendedor.setBounds(99, 257, 179, 22);
+		MenuLogin.add(Tipo_vendedor);
+		Tipo_vendedor.addItem("Restauração");
+		Tipo_vendedor.addItem("Farmacia");
+		Tipo_vendedor.addItem("Oficina");
 		
 		JLabel backgroundImage = new JLabel("New label");
 		backgroundImage.setBounds(0, 0, 923, 755);

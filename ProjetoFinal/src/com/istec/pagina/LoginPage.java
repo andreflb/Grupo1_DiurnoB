@@ -97,7 +97,9 @@ public class LoginPage extends JFrame {
 		signin.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JOptionPane.showMessageDialog(null, "Mudar para a página de Registo!!");
+				RegistoPage registo = new RegistoPage();
+				registo.setVisible(true);
+				dispose();
 			}
 		});
 		signin.setFont(new Font("Lucida Grande", Font.BOLD, 13));
