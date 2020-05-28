@@ -26,9 +26,8 @@ import java.awt.event.MouseEvent;
 import java.awt.Choice;
 import javax.swing.JComboBox;
 import javax.swing.JTabbedPane;
-import javax.swing.plaf.nimbus.FileChooserPainter;
-import javax.swing.plaf.nimbus.AbstractRegionPainter.PaintContext;
 import java.awt.Toolkit;
+import javax.swing.JToggleButton;
 	
 
 	public class GestaoPage extends JFrame {
@@ -38,7 +37,7 @@ import java.awt.Toolkit;
 		
 		public GestaoPage() {
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			setBounds(100, 100, 923, 755);
+			setBounds(100, 100, 900, 641);
 			contentPane = new JPanel();
 			contentPane.setBackground(Color.BLUE);
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -46,7 +45,7 @@ import java.awt.Toolkit;
 			contentPane.setLayout(null);
 			
 			JButton Manage = new JButton("Manage");
-			Manage.setBounds(20, 26, 117, 29);
+			Manage.setBounds(20, 13, 117, 29);
 			contentPane.add(Manage);
 			Manage.addActionListener(
 			new ActionListener() {
@@ -58,7 +57,7 @@ import java.awt.Toolkit;
 			Manage.setBorderPainted(false);
 			
 			JButton Stats = new JButton("Stats");
-			Stats.setBounds(20, 66, 117, 29);
+			Stats.setBounds(20, 53, 117, 29);
 			contentPane.add(Stats);
 			Stats.addActionListener(
 			new ActionListener() {
@@ -82,6 +81,52 @@ import java.awt.Toolkit;
 			Adicionar.setBorderPainted(false);
 			Adicionar.setBounds(781, 13, 98, 82);
 			contentPane.add(Adicionar);
+			
+			JButton AddDrink = new JButton("AddDrink");
+			AddDrink.setBounds(757, 560, 89, 23);
+			contentPane.add(AddDrink);
+			
+			JToggleButton Snacks = new JToggleButton("Snacks");
+			Snacks.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					if (Snacks.isSelected()) {
+						Snacks.setBackground(Color.RED);
+					}
+					else {
+						Snacks.setBackground(Color.BLUE);
+					}
+				}
+			});
+			Snacks.setBounds(218, 99, 121, 23);
+			contentPane.add(Snacks);
+			
+			JToggleButton Drinks = new JToggleButton("Drinks");
+			Drinks.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					if (Drinks.isSelected()) {
+						Drinks.setBackground(Color.RED);
+					}
+					else {
+						Drinks.setBackground(Color.BLUE);
+					}
+				}
+			});
+			Drinks.setBounds(347, 99, 121, 23);
+			contentPane.add(Drinks);
+			
+			JToggleButton HotDrinks = new JToggleButton("HotDrinks");
+			HotDrinks.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					if (HotDrinks.isSelected()) {
+						HotDrinks.setBackground(Color.RED);
+					}
+					else {
+						HotDrinks.setBackground(Color.BLUE);
+					}
+				}
+			});
+			HotDrinks.setBounds(478, 99, 121, 23);
+			contentPane.add(HotDrinks);
 			
 			setResizable(false);
 		}
