@@ -72,6 +72,8 @@ import javax.swing.JToggleButton;
 			tabbedPane.setBounds(146, 123, 702, 426);
 			contentPane.add(tabbedPane);
 			
+			
+			
 			JPanel panel = new JPanel();
 			panel.setBounds(147, 13, 610, 82);
 			contentPane.add(panel);

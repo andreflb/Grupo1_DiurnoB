@@ -75,7 +75,7 @@ public class ProdutoPage extends JFrame {
 		Registo.setBounds(213, 302, 117, 29);
 		MenuLogin.add(Registo);
 		
-		JButton Back = new JButton("Back");
+		JButton Back = new JButton("Cancelar");
 		Back.addActionListener(
 		new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

@@ -33,9 +33,7 @@ public class VendedorPage extends JFrame {
 	private PlaceholderPasswordField cfn;
 	private PlaceholderTextField email;
 	private PlaceholderTextField username;
-	private PlaceholderTextField vat;
-	private PlaceholderTextField company;
-
+	
 	public VendedorPage() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 923, 755);
