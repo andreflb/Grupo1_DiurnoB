@@ -68,67 +68,34 @@ import javax.swing.JToggleButton;
 			Stats.setOpaque(true);
 			Stats.setBorderPainted(false);
 			
-			JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-			tabbedPane.setBounds(146, 123, 702, 426);
-			contentPane.add(tabbedPane);
-			
 			
 			
 			JPanel panel = new JPanel();
 			panel.setBounds(147, 13, 610, 82);
 			contentPane.add(panel);
 			
-			JButton Adicionar = new JButton("Add");
-			Adicionar.setOpaque(true);
-			Adicionar.setBorderPainted(false);
-			Adicionar.setBounds(781, 13, 98, 82);
-			contentPane.add(Adicionar);
-			
 			JButton AddDrink = new JButton("AddDrink");
 			AddDrink.setBounds(757, 560, 89, 23);
 			contentPane.add(AddDrink);
 			
-			JToggleButton Snacks = new JToggleButton("Snacks");
-			Snacks.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					if (Snacks.isSelected()) {
-						Snacks.setBackground(Color.RED);
-					}
-					else {
-						Snacks.setBackground(Color.BLUE);
-					}
-				}
-			});
-			Snacks.setBounds(218, 99, 121, 23);
-			contentPane.add(Snacks);
+			JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+			tabbedPane.setBounds(147, 151, 684, 385);
+			contentPane.add(tabbedPane);
 			
-			JToggleButton Drinks = new JToggleButton("Drinks");
-			Drinks.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					if (Drinks.isSelected()) {
-						Drinks.setBackground(Color.RED);
-					}
-					else {
-						Drinks.setBackground(Color.BLUE);
-					}
-				}
-			});
-			Drinks.setBounds(347, 99, 121, 23);
-			contentPane.add(Drinks);
+			JPanel panel_1 = new JPanel();
+			tabbedPane.addTab("Hot Drinks", null, panel_1, null);
 			
-			JToggleButton HotDrinks = new JToggleButton("HotDrinks");
-			HotDrinks.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					if (HotDrinks.isSelected()) {
-						HotDrinks.setBackground(Color.RED);
-					}
-					else {
-						HotDrinks.setBackground(Color.BLUE);
-					}
+			JLabel AddVendedor = new JLabel("New label");
+			AddVendedor.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent arg0) {
+					VendedorPage vendor = new VendedorPage();
+					vendor.setVisible(true);
+					
 				}
 			});
-			HotDrinks.setBounds(478, 99, 121, 23);
-			contentPane.add(HotDrinks);
+			AddVendedor.setBounds(772, 20, 98, 75);
+			contentPane.add(AddVendedor);
 			
 			setResizable(false);
 		}
