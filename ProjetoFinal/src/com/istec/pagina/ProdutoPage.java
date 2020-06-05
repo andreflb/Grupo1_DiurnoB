@@ -47,6 +47,7 @@ public class ProdutoPage extends JFrame {
 		contentPane.add(MenuLogin);
 		MenuLogin.setLayout(null);
 		
+		
 		designacao = new PlaceholderTextField();
 		designacao.setBounds(99, 109, 179, 26);
 		designacao.setPlaceholder("Designação");
@@ -99,6 +100,19 @@ public class ProdutoPage extends JFrame {
 		Tipo_produto.addItem("Snacks");
 		Tipo_produto.addItem("Drink");
 		Tipo_produto.addItem("Hot Drink");
+		
+		JLabel AddProduto = new JLabel("AddProduto");
+		AddProduto.setBounds(131, 11, 98, 91);
+		MenuLogin.add(AddProduto);
+		AddProduto.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\ndrew\\git\\projetofinal\\ProjetoFinal\\add.png").getImage().getScaledInstance(AddProduto.getWidth(),AddProduto.getHeight(), Image.SCALE_DEFAULT)));
+		AddProduto.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				ProdutoPage product = new ProdutoPage();
+				product.setVisible(true);
+				
+			}
+		});
 		
 			
 		setResizable(false);
