@@ -108,7 +108,7 @@ import javax.swing.JToggleButton;
 			JLabel AddProduto = new JLabel("AddProduto");
 			AddProduto.setBounds(758, 510, 98, 91);
 			AddProduto.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\ndrew\\git\\projetofinal\\ProjetoFinal\\add.png").getImage().getScaledInstance(AddProduto.getWidth(),AddProduto.getHeight(), Image.SCALE_DEFAULT)));
-			contentPane.add(AddVendedor);
+			contentPane.add(AddProduto);
 			AddProduto.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent arg0) {

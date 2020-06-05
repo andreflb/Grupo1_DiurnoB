@@ -48,6 +48,8 @@ public class VendedorPage extends JFrame {
 		contentPane.add(MenuLogin);
 		MenuLogin.setLayout(null);
 		
+		
+		
 		username = new PlaceholderTextField();
 		username.setBounds(99, 109, 179, 26);
 		username.setPlaceholder("Username");
@@ -99,6 +101,19 @@ public class VendedorPage extends JFrame {
 		cfn.setPlaceholder("Confirm Password");
 		cfn.setBounds(99, 220, 179, 26);
 		MenuLogin.add(cfn);
+		
+		JLabel AddVendedor = new JLabel("New label");
+		AddVendedor.setBounds(113, 11, 123, 87);
+		MenuLogin.add(AddVendedor);
+		AddVendedor.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\ndrew\\git\\projetofinal\\ProjetoFinal\\addUser.png").getImage().getScaledInstance(AddVendedor.getWidth(),AddVendedor.getHeight(), Image.SCALE_DEFAULT)));
+		AddVendedor.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				VendedorPage vendor = new VendedorPage();
+				vendor.setVisible(true);
+				
+			}
+		});
 				
 		setResizable(false);
 	}
