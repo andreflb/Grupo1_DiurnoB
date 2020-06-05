@@ -28,6 +28,8 @@ import javax.swing.JComboBox;
 import javax.swing.JTabbedPane;
 import java.awt.Toolkit;
 import javax.swing.JToggleButton;
+import javax.swing.JList;
+import javax.swing.JTable;
 	
 
 	public class GestaoPage extends JFrame {
