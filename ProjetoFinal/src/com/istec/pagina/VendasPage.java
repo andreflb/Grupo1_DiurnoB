@@ -40,9 +40,19 @@ import javax.swing.JTabbedPane;
 import java.awt.Toolkit;
 import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
+import javax.swing.JTable;
+import javax.swing.TablePrintable;
+import javax.swing.JTable.PrintMode;
+import java.text.MessageFormat;
+import javax.swing.table.DefaultTableModel;
 public class VendasPage extends JFrame {
 
 	private JPanel contentPane;
+	private JTable table;
+	/**
+	 * @wbp.nonvisual location=30,79
+	 */
+	private final TablePrintable tablePrintable = new TablePrintable((JTable) null, (PrintMode) null, (MessageFormat) null, (MessageFormat) null);
                                      
 	
 	/**
@@ -90,6 +100,34 @@ public class VendasPage extends JFrame {
 			
 			JPanel HotDrinks = new JPanel();
 			AdicionarProduto.addTab("Hot Drinks", null, HotDrinks, null);
+			
+			table = new JTable();
+			table.setSurrendersFocusOnKeystroke(true);
+			table.setToolTipText("");
+			table.setModel(new DefaultTableModel(
+				new Object[][] {
+					{"", "", null},
+					{null, null, null},
+					{null, null, null},
+					{null, null, null},
+					{null, null, null},
+					{null, null, null},
+					{null, null, null},
+					{null, null, null},
+					{null, null, null},
+					{null, null, null},
+					{null, null, null},
+					{null, null, null},
+					{null, null, null},
+					{null, null, null},
+					{null, null, null},
+				},
+				new String[] {
+					"Nome", "Quantidade", "Preco"
+				}
+			));
+			table.setBounds(10, 11, 283, 579);
+			contentPane.add(table);
 			
 			setResizable(false);
 		}

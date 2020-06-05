@@ -76,12 +76,11 @@ import javax.swing.JTable;
 			vendedorlabel.setBounds(147, 13, 610, 82);
 			contentPane.add(vendedorlabel);
 			
-			JButton AddDrink = new JButton("AddDrink");
-			AddDrink.setBounds(757, 560, 89, 23);
-			contentPane.add(AddDrink);
+			
+			
 			
 			JTabbedPane AdicionarProduto = new JTabbedPane(JTabbedPane.TOP);
-			AdicionarProduto.setBounds(147, 151, 684, 385);
+			AdicionarProduto.setBounds(146, 106, 684, 385);
 			contentPane.add(AdicionarProduto);
 			
 			JPanel Snacks = new JPanel();
@@ -94,6 +93,9 @@ import javax.swing.JTable;
 			AdicionarProduto.addTab("Hot Drinks", null, HotDrinks, null);
 			
 			JLabel AddVendedor = new JLabel("New label");
+			AddVendedor.setBounds(783, 13, 86, 66);
+			AddVendedor.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\ndrew\\git\\projetofinal\\ProjetoFinal\\addUser.png").getImage().getScaledInstance(AddVendedor.getWidth(),AddVendedor.getHeight(), Image.SCALE_DEFAULT)));
+			contentPane.add(AddVendedor);
 			AddVendedor.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent arg0) {
@@ -102,8 +104,23 @@ import javax.swing.JTable;
 					
 				}
 			});
-			AddVendedor.setBounds(772, 20, 98, 75);
+			AddVendedor.setBounds(771, 13, 98, 75);
 			contentPane.add(AddVendedor);
+			
+			JLabel AddProduto = new JLabel("AddProduto");
+			AddProduto.setBounds(758, 510, 98, 91);
+			AddProduto.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\ndrew\\git\\projetofinal\\ProjetoFinal\\add.png").getImage().getScaledInstance(AddProduto.getWidth(),AddProduto.getHeight(), Image.SCALE_DEFAULT)));
+			contentPane.add(AddProduto);
+			AddProduto.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent arg0) {
+					ProdutoPage product = new ProdutoPage();
+					product.setVisible(true);
+					
+				}
+			});
+			
+			contentPane.add(AddProduto);
 			
 			setResizable(false);
 		}
