@@ -70,20 +70,26 @@ import javax.swing.JToggleButton;
 			
 			
 			
-			JPanel panel = new JPanel();
-			panel.setBounds(147, 13, 610, 82);
-			contentPane.add(panel);
+			JPanel vendedorlabel = new JPanel();
+			vendedorlabel.setBounds(147, 13, 610, 82);
+			contentPane.add(vendedorlabel);
 			
 			JButton AddDrink = new JButton("AddDrink");
 			AddDrink.setBounds(757, 560, 89, 23);
 			contentPane.add(AddDrink);
 			
-			JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-			tabbedPane.setBounds(147, 151, 684, 385);
-			contentPane.add(tabbedPane);
+			JTabbedPane AdicionarProduto = new JTabbedPane(JTabbedPane.TOP);
+			AdicionarProduto.setBounds(147, 151, 684, 385);
+			contentPane.add(AdicionarProduto);
 			
-			JPanel panel_1 = new JPanel();
-			tabbedPane.addTab("Hot Drinks", null, panel_1, null);
+			JPanel Snacks = new JPanel();
+			AdicionarProduto.addTab("Snacks", null, Snacks, null);
+			
+			JPanel Drinks = new JPanel();
+			AdicionarProduto.addTab("Drinks", null, Drinks, null);
+			
+			JPanel HotDrinks = new JPanel();
+			AdicionarProduto.addTab("Hot Drinks", null, HotDrinks, null);
 			
 			JLabel AddVendedor = new JLabel("New label");
 			AddVendedor.addMouseListener(new MouseAdapter() {
