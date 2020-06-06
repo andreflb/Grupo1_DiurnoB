@@ -105,7 +105,7 @@ public class VendedorPage extends JFrame {
 		JLabel AddVendedor = new JLabel("New label");
 		AddVendedor.setBounds(113, 11, 123, 87);
 		MenuLogin.add(AddVendedor);
-		AddVendedor.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\ndrew\\git\\projetofinal\\ProjetoFinal\\addUser.png").getImage().getScaledInstance(AddVendedor.getWidth(),AddVendedor.getHeight(), Image.SCALE_DEFAULT)));
+		AddVendedor.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\gonga\\git\\Grupo1_DiurnoB\\ProjetoFinal\\addUser.png").getImage().getScaledInstance(AddVendedor.getWidth(),AddVendedor.getHeight(), Image.SCALE_DEFAULT)));
 		AddVendedor.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {

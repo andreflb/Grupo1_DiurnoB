@@ -92,7 +92,7 @@ import javax.swing.JToggleButton;
 			
 			JLabel AddVendedor = new JLabel("New label");
 			AddVendedor.setBounds(783, 13, 86, 66);
-			AddVendedor.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\ndrew\\git\\projetofinal\\ProjetoFinal\\addUser.png").getImage().getScaledInstance(AddVendedor.getWidth(),AddVendedor.getHeight(), Image.SCALE_DEFAULT)));
+			AddVendedor.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\gonga\\git\\Grupo1_DiurnoB\\ProjetoFinal\\addUser.png").getImage().getScaledInstance(AddVendedor.getWidth(),AddVendedor.getHeight(), Image.SCALE_DEFAULT)));
 			contentPane.add(AddVendedor);
 			AddVendedor.addMouseListener(new MouseAdapter() {
 				@Override
@@ -107,7 +107,7 @@ import javax.swing.JToggleButton;
 			
 			JLabel AddProduto = new JLabel("AddProduto");
 			AddProduto.setBounds(758, 510, 98, 91);
-			AddProduto.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\ndrew\\git\\projetofinal\\ProjetoFinal\\add.png").getImage().getScaledInstance(AddProduto.getWidth(),AddProduto.getHeight(), Image.SCALE_DEFAULT)));
+			AddProduto.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\gonga\\git\\Grupo1_DiurnoB\\ProjetoFinal\\add.png").getImage().getScaledInstance(AddProduto.getWidth(),AddProduto.getHeight(), Image.SCALE_DEFAULT)));
 			contentPane.add(AddProduto);
 			AddProduto.addMouseListener(new MouseAdapter() {
 				@Override

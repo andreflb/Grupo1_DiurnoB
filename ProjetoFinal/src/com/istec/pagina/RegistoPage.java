@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import com.istec.main.Dados;
 import com.istec.paginas.componetes.PlaceholderPasswordField;
 import com.istec.paginas.componetes.PlaceholderTextField;
 
@@ -35,6 +36,7 @@ public class RegistoPage extends JFrame {
 	private PlaceholderTextField vat;
 	private PlaceholderTextField email;
 	private PlaceholderPasswordField cfn;
+	private JComboBox tipo_vendedor;
 
 	
 	public RegistoPage() {
@@ -87,7 +89,16 @@ public class RegistoPage extends JFrame {
 		Registo.addActionListener(
 		new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Clicou no Registo!");
+			if (Dados.getinstance().Registo(company.getText(), Integer.valueOf(vat.getText()), username.getText(), email.getText(), pwd.getText(), cfn.getText(), (String) tipo_vendedor.getSelectedItem())) {
+				dispose(); 
+				LoginPage login = new LoginPage();
+				login.setVisible(true);
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "Erro no Registo");
+
+			}
+			
 			}
 		});
 		Registo.setOpaque(true);
@@ -119,12 +130,12 @@ public class RegistoPage extends JFrame {
 		cfn.setBounds(99, 220, 179, 26);
 		MenuLogin.add(cfn);
 		
-		JComboBox Tipo_vendedor = new JComboBox();
-		Tipo_vendedor.setBounds(99, 257, 179, 22);
-		MenuLogin.add(Tipo_vendedor);
-		Tipo_vendedor.addItem("Restauração");
-		Tipo_vendedor.addItem("Farmacia");
-		Tipo_vendedor.addItem("Oficina");
+		 tipo_vendedor = new JComboBox();
+		tipo_vendedor.setBounds(99, 257, 179, 22);
+		MenuLogin.add(tipo_vendedor);
+		tipo_vendedor.addItem("Restauração");
+		tipo_vendedor.addItem("Farmacia");
+		tipo_vendedor.addItem("Oficina");
 		
 		JLabel backgroundImage = new JLabel("New label");
 		backgroundImage.setBounds(0, 0, 923, 755);
