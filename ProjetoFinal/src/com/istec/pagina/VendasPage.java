@@ -41,18 +41,18 @@ import java.awt.Toolkit;
 import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
 import javax.swing.JTable;
-import javax.swing.TablePrintable;
 import javax.swing.JTable.PrintMode;
 import java.text.MessageFormat;
 import javax.swing.table.DefaultTableModel;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
 public class VendasPage extends JFrame {
 
 	private JPanel contentPane;
-	private JTable table;
 	/**
 	 * @wbp.nonvisual location=30,79
 	 */
-	private final TablePrintable tablePrintable = new TablePrintable((JTable) null, (PrintMode) null, (MessageFormat) null, (MessageFormat) null);
                                      
 	
 	/**
@@ -101,33 +101,36 @@ public class VendasPage extends JFrame {
 			JPanel HotDrinks = new JPanel();
 			AdicionarProduto.addTab("Hot Drinks", null, HotDrinks, null);
 			
-			table = new JTable();
-			table.setSurrendersFocusOnKeystroke(true);
-			table.setToolTipText("");
-			table.setModel(new DefaultTableModel(
-				new Object[][] {
-					{"", "", null},
-					{null, null, null},
-					{null, null, null},
-					{null, null, null},
-					{null, null, null},
-					{null, null, null},
-					{null, null, null},
-					{null, null, null},
-					{null, null, null},
-					{null, null, null},
-					{null, null, null},
-					{null, null, null},
-					{null, null, null},
-					{null, null, null},
-					{null, null, null},
-				},
-				new String[] {
-					"Nome", "Quantidade", "Preco"
-				}
-			));
-			table.setBounds(10, 11, 283, 579);
-			contentPane.add(table);
+			JPanel panel = new JPanel();
+			panel.setBounds(10, 11, 283, 579);
+			contentPane.add(panel);
+			GridBagLayout gbl_panel = new GridBagLayout();
+			gbl_panel.columnWidths = new int[] {90, 90, 90};
+			gbl_panel.rowHeights = new int[] {30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30};
+			gbl_panel.columnWeights = new double[]{Double.MIN_VALUE};
+			gbl_panel.rowWeights = new double[]{Double.MIN_VALUE};
+			panel.setLayout(gbl_panel);
+			
+			JLabel Nome = new JLabel("Nome");
+			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
+			gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
+			gbc_lblNewLabel.gridx = 0;
+			gbc_lblNewLabel.gridy = 0;
+			panel.add(Nome, gbc_lblNewLabel);
+			
+			JLabel Quantidade = new JLabel("Quantidade");
+			GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
+			gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
+			gbc_lblNewLabel_1.gridx = 1;
+			gbc_lblNewLabel_1.gridy = 0;
+			panel.add(Quantidade, gbc_lblNewLabel_1);
+			
+			JLabel Preco = new JLabel("Preco");
+			GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
+			gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 0);
+			gbc_lblNewLabel_2.gridx = 2;
+			gbc_lblNewLabel_2.gridy = 0;
+			panel.add(Preco, gbc_lblNewLabel_2);
 			
 			setResizable(false);
 		}

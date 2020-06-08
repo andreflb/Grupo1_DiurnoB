@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import com.istec.main.Dados;
 import com.istec.paginas.componetes.PlaceholderPasswordField;
 import com.istec.paginas.componetes.PlaceholderTextField;
 
@@ -75,8 +76,14 @@ public class LoginPage extends JFrame {
 		Login.addActionListener(
 		new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Clicou no Login!!");
+				
+				if(Dados.getinstance().login(username.getText(), pwd.getText())) {
+					GestaoPage gestao = new GestaoPage();
+					gestao.setVisible(true);
+				}else {
+				JOptionPane.showMessageDialog(null, "Erro");
 			}
+			}	
 		});
 		Login.setOpaque(true);
 		Login.setBorderPainted(false);
@@ -123,7 +130,7 @@ public class LoginPage extends JFrame {
 		
 		JLabel backgroundImage = new JLabel("New label");
 		backgroundImage.setBounds(0, 0, 923, 755);
-		backgroundImage.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\ndrew\\git\\projetofinal\\ProjetoFinal\\POS.jpg").getImage().getScaledInstance(backgroundImage.getWidth(),backgroundImage.getHeight(), Image.SCALE_DEFAULT)));
+		backgroundImage.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\gonga\\git\\Grupo1_DiurnoB\\ProjetoFinal\\POS.jpg").getImage().getScaledInstance(backgroundImage.getWidth(),backgroundImage.getHeight(), Image.SCALE_DEFAULT)));
 		contentPane.add(backgroundImage);
 		
 		setResizable(false);
