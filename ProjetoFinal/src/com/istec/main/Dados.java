@@ -10,13 +10,14 @@ import java.io.ObjectOutputStream;
 
 import com.istec.objectos.Admin;
 import com.istec.objectos.Empresa;
+import com.istec.objectos.Vendedor;
 
 
 public class Dados {
 	
 	public static Dados instance;
 	public Empresa emp;	
-	
+	public Vendedor vd;	
 	public Dados() {
 		ler();
 	}
@@ -80,6 +81,28 @@ public class Dados {
 		}
 	}
 	
+	public boolean VendedorRegisto(String username, String email, String pwd, String cfn) 
+	{
+		
+		Vendedor  vend = new Vendedor(username, email, pwd, cfn);
+		this.vd = vend;
+		
 	
+		guardar();
+		return true;
+	}
+	public  void guardarVend() {
+		try {
+			ObjectOutputStream objs = new ObjectOutputStream(new FileOutputStream(new File("Vendedor.dat")));
+			objs.writeObject(vd);
+			objs.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 }
