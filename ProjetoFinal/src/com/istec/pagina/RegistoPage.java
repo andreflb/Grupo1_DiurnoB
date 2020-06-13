@@ -110,8 +110,17 @@ public class RegistoPage extends JFrame {
 		Back.addActionListener(
 		new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Clicou no Back!");
-			}
+				if (Dados.getinstance().Registo(company.getText(), Integer.valueOf(vat.getText()), username.getText(), email.getText(), pwd.getText(), cfn.getText(), (String) tipo_vendedor.getSelectedItem())) {
+					dispose(); 
+					LoginPage login = new LoginPage();
+					login.setVisible(true);
+					
+				}else {
+					JOptionPane.showMessageDialog(null, "Voltou atras");
+
+				}
+				
+				}
 		});
 		Back.setOpaque(true);
 		Back.setBorderPainted(false);

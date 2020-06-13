@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import com.istec.main.Dados;
 import com.istec.paginas.componetes.PlaceholderPasswordField;
 import com.istec.paginas.componetes.PlaceholderTextField;
 
@@ -70,7 +71,12 @@ public class VendedorPage extends JFrame {
 		Registo.addActionListener(
 		new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Clicou no Registo!");
+				if(Dados.getinstance().VendedorRegisto(username.getText(), email.getText() , pwd.getText(), cfn.getText())) {
+					GestaoPage gestao = new GestaoPage();
+					gestao.setVisible(true);
+				}else {
+				JOptionPane.showMessageDialog(null, "Erro");
+			}
 			}
 		});
 		Registo.setOpaque(true);

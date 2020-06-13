@@ -19,10 +19,7 @@ public class Vendedor extends User implements Serializable{
 
 	public String getCfn() {
 		return cfn;
-	}
-
-	
-	
+	}	
 	
 	}
 	
