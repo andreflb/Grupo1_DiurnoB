@@ -1,24 +1,31 @@
 package com.istec.pagina;
 
-import java.awt.Color;
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
 import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import com.istec.main.Dados;
 import com.istec.paginas.componetes.PlaceholderPasswordField;
 import com.istec.paginas.componetes.PlaceholderTextField;
+
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
+import java.awt.Color;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JPasswordField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.Choice;
+import javax.swing.JComboBox;
 
 public class RegistoPage extends JFrame {
 
@@ -100,24 +107,12 @@ public class RegistoPage extends JFrame {
 		MenuLogin.add(Registo);
 		
 		JButton Back = new JButton("Back");
-		Back.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				LoginPage login = new LoginPage();
-				login.setVisible(true);
-				dispose();
-			}
-		});
 		Back.addActionListener(
-				new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-				LoginPage login = new LoginPage();
-				login.setVisible(true);
-				dispose();
+		new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Clicou no Back!");
 			}
 		});
-				
-		
 		Back.setOpaque(true);
 		Back.setBorderPainted(false);
 		Back.setBounds(50, 302, 117, 29);
