@@ -42,8 +42,6 @@ public class LoginPage extends JFrame {
 			}
 		});
 	}
-	
-	// oi trABALHO
 
 	/**
 	 * Create the frame.
