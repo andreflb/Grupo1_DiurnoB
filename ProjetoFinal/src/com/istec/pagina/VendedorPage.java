@@ -69,16 +69,20 @@ public class VendedorPage extends JFrame {
 		
 		JButton Registo = new JButton("Registo");
 		Registo.addActionListener(
-		new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(Dados.getinstance().VendedorRegisto(username.getText(), email.getText() , pwd.getText(), cfn.getText())) {
-					GestaoPage gestao = new GestaoPage();
-					gestao.setVisible(true);
-				}else {
-				JOptionPane.showMessageDialog(null, "Erro");
-			}
-			}
-		});
+				new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+					if (Dados.getinstance().VendedorRegisto(username.getText(),  email.getText(), pwd.getText(), cfn.getText())) {
+						dispose(); 
+						GestaoPage gestao = new GestaoPage();
+						gestao.setVisible(true);
+						
+					}else {
+						JOptionPane.showMessageDialog(null, "Erro no Registo");
+
+					}
+					
+					}
+				});
 		Registo.setOpaque(true);
 		Registo.setBorderPainted(false);
 		Registo.setBounds(213, 302, 117, 29);
