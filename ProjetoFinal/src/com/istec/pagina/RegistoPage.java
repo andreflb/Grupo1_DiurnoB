@@ -40,6 +40,7 @@ public class RegistoPage extends JFrame {
 
 	
 	public RegistoPage() {
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 923, 755);
 		contentPane = new JPanel();
@@ -139,7 +140,7 @@ public class RegistoPage extends JFrame {
 		cfn.setBounds(99, 220, 179, 26);
 		MenuLogin.add(cfn);
 		
-		 tipo_vendedor = new JComboBox();
+		tipo_vendedor = new JComboBox();
 		tipo_vendedor.setBounds(99, 257, 179, 22);
 		MenuLogin.add(tipo_vendedor);
 		tipo_vendedor.addItem("Restauração");
