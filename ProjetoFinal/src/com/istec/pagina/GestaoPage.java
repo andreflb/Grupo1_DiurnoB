@@ -93,7 +93,7 @@ import javax.swing.JTable;
 			AdicionarProduto.addTab("Hot Drinks", null, HotDrinks, null);
 			
 			JLabel AddVendedor = new JLabel("New label");
-			AddVendedor.setBounds(783, 13, 86, 66);
+			AddVendedor.setBounds(767, 13, 86, 66);
 			AddVendedor.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\gonga\\git\\Grupo1_DiurnoB\\ProjetoFinal\\addUser.png").getImage().getScaledInstance(AddVendedor.getWidth(),AddVendedor.getHeight(), Image.SCALE_DEFAULT)));
 			contentPane.add(AddVendedor);
 			AddVendedor.addMouseListener(new MouseAdapter() {
