@@ -4,8 +4,6 @@ import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -101,24 +99,12 @@ public class RegistoPage extends JFrame {
 		MenuLogin.add(Registo);
 		
 		JButton Back = new JButton("Back");
-		Back.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				LoginPage login = new LoginPage();
-				login.setVisible(true);
-				dispose();
-			}
-		});
 		Back.addActionListener(
-				new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-				LoginPage login = new LoginPage();
-				login.setVisible(true);
-				dispose();
+		new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Clicou no Back!");
 			}
 		});
-				
-		
 		Back.setOpaque(true);
 		Back.setBorderPainted(false);
 		Back.setBounds(50, 302, 117, 29);
