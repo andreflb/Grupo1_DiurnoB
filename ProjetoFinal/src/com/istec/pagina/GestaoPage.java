@@ -52,7 +52,7 @@ import javax.swing.JTable;
 			Manage.addActionListener(
 			new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					JOptionPane.showMessageDialog(null, "Clicou no Back!");
+					JOptionPane.showMessageDialog(null, "Clicou no Manage!");
 				}
 			});
 			Manage.setOpaque(true);
@@ -64,7 +64,7 @@ import javax.swing.JTable;
 			Stats.addActionListener(
 			new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					JOptionPane.showMessageDialog(null, "Clicou no Registo!");
+					JOptionPane.showMessageDialog(null, "Clicou no Stats!");
 				}
 			});
 			Stats.setOpaque(true);
