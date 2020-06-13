@@ -42,6 +42,8 @@ public class LoginPage extends JFrame {
 			}
 		});
 	}
+	
+	// oi trABALHO
 
 	/**
 	 * Create the frame.
@@ -109,7 +111,7 @@ public class LoginPage extends JFrame {
 		signin.setBounds(218, 291, 61, 16);
 		MenuLogin.add(signin);
 		
-		JLabel pwdLbl = new JLabel("Forgot password?");
+		JLabel pwdLbl = new JLabel("Forgot password");
 		pwdLbl.setBounds(84, 332, 122, 16);
 		MenuLogin.add(pwdLbl);
 		
