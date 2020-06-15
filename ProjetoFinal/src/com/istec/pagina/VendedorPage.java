@@ -61,11 +61,13 @@ public class VendedorPage extends JFrame {
 		
 				
 		JButton Back = new JButton("Back");
-		Back.addActionListener(
-		new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Clicou no Back!");
-			}
+		Back.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+					GestaoPage gestao = new GestaoPage();
+					gestao.setVisible(true);
+					dispose();
+					}
 		});
 		Back.setOpaque(true);
 		Back.setBorderPainted(false);
@@ -92,6 +94,7 @@ public class VendedorPage extends JFrame {
 						dispose(); 
 						GestaoPage gestao = new GestaoPage();
 						gestao.setVisible(true);
+						dispose();
 						
 					}else {
 						JOptionPane.showMessageDialog(null, "Erro no Registo");
@@ -115,7 +118,7 @@ public class VendedorPage extends JFrame {
 			public void mouseClicked(MouseEvent arg0) {
 				VendedorPage vendor = new VendedorPage();
 				vendor.setVisible(true);
-				
+				dispose();
 			}
 		});
 				

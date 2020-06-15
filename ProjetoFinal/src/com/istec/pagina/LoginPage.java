@@ -65,6 +65,7 @@ public class LoginPage extends JFrame {
 				if(Dados.getinstance().login(username.getText(), pwd.getText())) {
 					GestaoPage gestao = new GestaoPage();
 					gestao.setVisible(true);
+					dispose();
 				}else {
 				JOptionPane.showMessageDialog(null, "Erro");
 			}

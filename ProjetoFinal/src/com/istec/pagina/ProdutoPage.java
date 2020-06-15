@@ -68,12 +68,15 @@ public class ProdutoPage extends JFrame {
 		
 		
 		JButton Back = new JButton("Cancelar");
-		Back.addActionListener(
-		new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Clicou no Back!");
+		Back.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+					GestaoPage gestao = new GestaoPage();
+					gestao.setVisible(true);
+					dispose();
+				
 			}
-		});
+			});
 		Back.setOpaque(true);
 		Back.setBorderPainted(false);
 		Back.setBounds(50, 302, 117, 29);
@@ -128,13 +131,14 @@ public class ProdutoPage extends JFrame {
 						FileOutputStream fileOutputStream;
 						try {
 							fileOutputStream = new FileOutputStream(file);
-						} catch (FileNotFoundException e) {
+							fileOutputStream.flush();
+							fileOutputStream.close();
+						} catch (Exception e) {
 							
 							e.printStackTrace();
 						}
 						
-						fileOutputStream.flush();
-						fileOutputStream.close();
+						
 					
 						// TODO Auto-generated catch block
 						
