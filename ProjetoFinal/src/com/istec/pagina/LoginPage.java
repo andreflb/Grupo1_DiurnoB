@@ -92,7 +92,7 @@ public class LoginPage extends JFrame {
 		
 		JLabel pwdLbl = new JLabel("Forgot password");
 		pwdLbl.setBounds(84, 332, 122, 16);
-		MenuLogin.add(pwdLbl);
+		MenuLogin.add(signin);
 		
 		JLabel recover = new JLabel("Recover");
 		recover.addMouseListener(new MouseAdapter() {
