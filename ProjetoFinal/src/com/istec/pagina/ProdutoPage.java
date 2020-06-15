@@ -63,7 +63,7 @@ public class ProdutoPage extends JFrame {
 		
 		
 		
-		JButton Back = new JButton("Cancelar");
+		JButton Back = new JButton("Cancelareeeeeeeeeeeee");
 		Back.addActionListener(
 		new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
