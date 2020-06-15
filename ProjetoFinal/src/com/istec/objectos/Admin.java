@@ -2,6 +2,7 @@ package com.istec.objectos;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Admin extends User  implements Serializable{
 	
 	String cfn;

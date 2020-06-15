@@ -20,12 +20,14 @@ import com.istec.main.Dados;
 import com.istec.paginas.componetes.PlaceholderPasswordField;
 import com.istec.paginas.componetes.PlaceholderTextField;
 
+@SuppressWarnings("serial")
 public class ProdutoPage extends JFrame {
 
 	private JPanel contentPane;
 	private PlaceholderTextField designacao;
 	private PlaceholderTextField codigo;
 	private PlaceholderPasswordField preco;
+	@SuppressWarnings("rawtypes")
 	private JComboBox tipo_produto;
 
 	public ProdutoPage() {
@@ -60,9 +62,9 @@ public class ProdutoPage extends JFrame {
 		codigo.setColumns(10);
 		
 		JButton Registo = new JButton("Registo");
-		Registo.addActionListener(
-		new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		Registo.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
 				if(Dados.getinstance().ProdutoRegisto(designacao.getText(), codigo.getText(), preco.getText() , (String) tipo_produto.getSelectedItem() )) {
 					GestaoPage gestao = new GestaoPage();
 					gestao.setVisible(true);
@@ -71,6 +73,7 @@ public class ProdutoPage extends JFrame {
 			}
 			}
 		});
+		
 		Registo.setOpaque(true);
 		Registo.setBorderPainted(false);
 		Registo.setBounds(213, 302, 117, 29);

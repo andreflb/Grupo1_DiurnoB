@@ -3,6 +3,7 @@ package com.istec.objectos;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+@SuppressWarnings("serial")
 public class Empresa implements Serializable {
 	String company;
 	int vat;

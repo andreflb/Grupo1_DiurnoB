@@ -21,6 +21,7 @@ import com.istec.main.Dados;
 import com.istec.paginas.componetes.PlaceholderPasswordField;
 import com.istec.paginas.componetes.PlaceholderTextField;
 //Olaaaaaa teste
+@SuppressWarnings("serial")
 public class LoginPage extends JFrame {
 
 	private JPanel contentPane;
@@ -30,18 +31,6 @@ public class LoginPage extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					LoginPage frame = new LoginPage();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
