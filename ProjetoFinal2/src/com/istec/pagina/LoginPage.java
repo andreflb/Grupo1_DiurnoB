@@ -33,7 +33,7 @@ public class LoginPage extends JFrame {
 	 */
 
 	/**
-	 * Create the frame.
+	 * Create the frahjie.
 	 */
 	public LoginPage() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
