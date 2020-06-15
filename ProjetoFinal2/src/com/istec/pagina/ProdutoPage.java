@@ -112,7 +112,7 @@ public class ProdutoPage extends JFrame {
 		JLabel AddProduto = new JLabel("AddProduto");
 		AddProduto.setBounds(131, 11, 98, 91);
 		MenuLogin.add(AddProduto);
-		AddProduto.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\gonga\\git\\Grupo1_DiurnoB\\ProjetoFinal\\add.png").getImage().getScaledInstance(AddProduto.getWidth(),AddProduto.getHeight(), Image.SCALE_DEFAULT)));
+		AddProduto.setIcon(new ImageIcon(new ImageIcon("C:\\Use´krs\\gonga\\git\\Grupo1_DiurnoB\\ProjetoFinal\\add.png").getImage().getScaledInstance(AddProduto.getWidth(),AddProduto.getHeight(), Image.SCALE_DEFAULT)));
 		AddProduto.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
