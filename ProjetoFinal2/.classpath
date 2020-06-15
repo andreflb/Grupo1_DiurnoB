@@ -6,9 +6,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="POS.jpg"/>
-	<classpathentry kind="lib" path="add.png"/>
-	<classpathentry kind="lib" path="addUser.png"/>
-	<classpathentry kind="lib" path="Empresa.dat"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
