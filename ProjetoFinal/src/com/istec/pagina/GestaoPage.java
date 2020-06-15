@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
 	
-// cara feia
+// cara feiabjkbkblbnl
 	@SuppressWarnings("serial")
 	public class GestaoPage extends JFrame {
 
