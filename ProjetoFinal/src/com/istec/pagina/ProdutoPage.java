@@ -88,11 +88,12 @@ public class ProdutoPage extends JFrame {
 		tipo_produto.addItem("Drink");
 		tipo_produto.addItem("Hot Drink");
 		
+		
 		JButton Registo = new JButton("Registo");
 		Registo.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JOptionPane.showMessageDialog(null, "Erro");
+				JOptionPane.showMessageDialog(null, tipo_produto.getSelectedItem());
 				if(Dados.getinstance().ProdutoRegisto(designacao.getText(), codigo.getText(), preco.getText() , (String) tipo_produto.getSelectedItem() )) {
 					GestaoPage gestao = new GestaoPage();
 					gestao.setVisible(true);
@@ -106,6 +107,8 @@ public class ProdutoPage extends JFrame {
 		Registo.setBorderPainted(false);
 		Registo.setBounds(213, 302, 117, 29);
 		MenuLogin.add(Registo);
+		
+		
 		JLabel AddProduto = new JLabel("AddProduto");
 		AddProduto.setBounds(131, 11, 98, 91);
 		MenuLogin.add(AddProduto);
