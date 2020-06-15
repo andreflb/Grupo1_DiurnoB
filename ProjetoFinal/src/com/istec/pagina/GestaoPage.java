@@ -17,6 +17,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
 	
 
+	@SuppressWarnings("serial")
 	public class GestaoPage extends JFrame {
 
 		private JPanel contentPane;

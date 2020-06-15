@@ -2,6 +2,7 @@ package com.istec.objectos;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class User  implements Serializable{
 	String username; 
 	String pwd;

@@ -2,6 +2,7 @@ package com.istec.objectos;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Vendedor extends User implements Serializable{
 	String email;
 	String cfn;
