@@ -20,14 +20,14 @@ import com.istec.main.Dados;
 import com.istec.paginas.componetes.PlaceholderPasswordField;
 import com.istec.paginas.componetes.PlaceholderTextField;
 
-@SuppressWarnings("serial")
+
 public class ProdutoPage extends JFrame {
 
 	private JPanel contentPane;
 	private PlaceholderTextField designacao;
 	private PlaceholderTextField codigo;
 	private PlaceholderPasswordField preco;
-	@SuppressWarnings("rawtypes")
+	
 	private JComboBox tipo_produto;
 
 	public ProdutoPage() {
@@ -61,23 +61,7 @@ public class ProdutoPage extends JFrame {
 		MenuLogin.add(codigo);
 		codigo.setColumns(10);
 		
-		JButton Registo = new JButton("Registo");
-		Registo.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				if(Dados.getinstance().ProdutoRegisto(designacao.getText(), codigo.getText(), preco.getText() , (String) tipo_produto.getSelectedItem() )) {
-					GestaoPage gestao = new GestaoPage();
-					gestao.setVisible(true);
-				}else {
-				JOptionPane.showMessageDialog(null, "Erro");
-			}
-			}
-		});
 		
-		Registo.setOpaque(true);
-		Registo.setBorderPainted(false);
-		Registo.setBounds(213, 302, 117, 29);
-		MenuLogin.add(Registo);
 		
 		JButton Back = new JButton("Cancelar");
 		Back.addActionListener(
@@ -97,13 +81,31 @@ public class ProdutoPage extends JFrame {
 		preco.setBounds(99, 183, 179, 26);
 		MenuLogin.add(preco);
 		
-		JComboBox Tipo_produto = new JComboBox();
-		Tipo_produto.setBounds(99, 220, 179, 22);
-		MenuLogin.add(Tipo_produto);
-		Tipo_produto.addItem("Snacks");
-		Tipo_produto.addItem("Drink");
-		Tipo_produto.addItem("Hot Drink");
+		JComboBox tipo_produto = new JComboBox();
+		tipo_produto.setBounds(99, 220, 179, 22);
+		MenuLogin.add(tipo_produto);
+		tipo_produto.addItem("Snacks");
+		tipo_produto.addItem("Drink");
+		tipo_produto.addItem("Hot Drink");
 		
+		JButton Registo = new JButton("Registo");
+		Registo.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JOptionPane.showMessageDialog(null, "Erro");
+				if(Dados.getinstance().ProdutoRegisto(designacao.getText(), codigo.getText(), preco.getText() , (String) tipo_produto.getSelectedItem() )) {
+					GestaoPage gestao = new GestaoPage();
+					gestao.setVisible(true);
+				}else {
+				JOptionPane.showMessageDialog(null, "Erro");
+			}
+			}
+		});
+		
+		Registo.setOpaque(true);
+		Registo.setBorderPainted(false);
+		Registo.setBounds(213, 302, 117, 29);
+		MenuLogin.add(Registo);
 		JLabel AddProduto = new JLabel("AddProduto");
 		AddProduto.setBounds(131, 11, 98, 91);
 		MenuLogin.add(AddProduto);
