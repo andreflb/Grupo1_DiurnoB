@@ -98,10 +98,10 @@ public class Dados {
 	}
 	
 	//VENDAS
-	public boolean ProdutoRegisto(String designacao, String codigo, String preco, String tipo_produto) 
+	public boolean ProdutoRegisto(String designacao, String codigo, String preco, String Tipo_produto) 
 	{
 		
-		Produto  prod = new Produto (designacao, preco, codigo, tipo_produto);
+		Produto  prod = new Produto (designacao, preco, codigo, Tipo_produto);
 		this.pd = prod;
 		
 		guardar();

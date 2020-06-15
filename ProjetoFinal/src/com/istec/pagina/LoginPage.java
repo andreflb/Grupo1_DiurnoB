@@ -20,13 +20,21 @@ import javax.swing.border.EmptyBorder;
 import com.istec.main.Dados;
 import com.istec.paginas.componetes.PlaceholderPasswordField;
 import com.istec.paginas.componetes.PlaceholderTextField;
-
+//Olaaaaaa teste
+@SuppressWarnings("serial")
 public class LoginPage extends JFrame {
 
 	private JPanel contentPane;
 	private PlaceholderTextField username;
 	private PlaceholderPasswordField pwd;
 
+	/**
+	 * Launch the application.
+	 */
+
+	/**
+	 * Create the frame.
+	 */
 	public LoginPage() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 923, 755);
@@ -92,7 +100,7 @@ public class LoginPage extends JFrame {
 		
 		JLabel pwdLbl = new JLabel("Forgot password");
 		pwdLbl.setBounds(84, 332, 122, 16);
-		MenuLogin.add(signin);
+		MenuLogin.add(pwdLbl);
 		
 		JLabel recover = new JLabel("Recover");
 		recover.addMouseListener(new MouseAdapter() {
