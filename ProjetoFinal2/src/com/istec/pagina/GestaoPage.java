@@ -78,7 +78,7 @@ import javax.swing.border.EmptyBorder;
 			JPanel HotDrinks = new JPanel();
 			AdicionarProduto.addTab("Hot Drinks", null, HotDrinks, null);
 			
-			JLabel AddVendedor = new JLabel("New label");
+			JLabel AddVendedor = new JLabel("AddVendedor");
 			AddVendedor.setBounds(767, 13, 86, 66);
 			AddVendedor.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\gonga\\git\\Grupo1_DiurnoB\\ProjetoFinal\\addUser.png").getImage().getScaledInstance(AddVendedor.getWidth(),AddVendedor.getHeight(), Image.SCALE_DEFAULT)));
 			contentPane.add(AddVendedor);
@@ -87,6 +87,7 @@ import javax.swing.border.EmptyBorder;
 				public void mouseClicked(MouseEvent arg0) {
 					VendedorPage vendor = new VendedorPage();
 					vendor.setVisible(true);
+					dispose();
 					
 				}
 			});
@@ -102,6 +103,7 @@ import javax.swing.border.EmptyBorder;
 				public void mouseClicked(MouseEvent arg0) {
 					ProdutoPage product = new ProdutoPage();
 					product.setVisible(true);
+					dispose();
 					
 				}
 			});

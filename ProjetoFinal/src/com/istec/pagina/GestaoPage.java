@@ -87,6 +87,7 @@ import javax.swing.border.EmptyBorder;
 				public void mouseClicked(MouseEvent arg0) {
 					VendedorPage vendor = new VendedorPage();
 					vendor.setVisible(true);
+					dispose();
 					
 				}
 			});
@@ -102,6 +103,7 @@ import javax.swing.border.EmptyBorder;
 				public void mouseClicked(MouseEvent arg0) {
 					ProdutoPage product = new ProdutoPage();
 					product.setVisible(true);
+					dispose();
 					
 				}
 			});

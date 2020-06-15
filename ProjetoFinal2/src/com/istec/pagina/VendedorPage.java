@@ -59,33 +59,15 @@ public class VendedorPage extends JFrame {
 		MenuLogin.add(email);
 		email.setColumns(10);
 		
-		JButton Registo = new JButton("Registo");
-		Registo.addActionListener(
-				new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-					if (Dados.getinstance().VendedorRegisto(username.getText(),  email.getText(), pwd.getText(), cfn.getText())) {
-						dispose(); 
-						GestaoPage gestao = new GestaoPage();
-						gestao.setVisible(true);
-						
-					}else {
-						JOptionPane.showMessageDialog(null, "Erro no Registo");
-
-					}
-					
-					}
-				});
-		Registo.setOpaque(true);
-		Registo.setBorderPainted(false);
-		Registo.setBounds(213, 302, 117, 29);
-		MenuLogin.add(Registo);
-		
+				
 		JButton Back = new JButton("Back");
-		Back.addActionListener(
-		new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Clicou no Back!");
-			}
+		Back.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+					GestaoPage gestao = new GestaoPage();
+					gestao.setVisible(true);
+					dispose();
+					}
 		});
 		Back.setOpaque(true);
 		Back.setBorderPainted(false);
@@ -104,6 +86,29 @@ public class VendedorPage extends JFrame {
 		cfn.setBounds(99, 220, 179, 26);
 		MenuLogin.add(cfn);
 		
+		JButton Registo = new JButton("Registo");
+		Registo.addActionListener(
+				new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+					if (Dados.getinstance().VendedorRegisto(username.getText(),  email.getText(), pwd.getText(), cfn.getText())) {
+						dispose(); 
+						GestaoPage gestao = new GestaoPage();
+						gestao.setVisible(true);
+						dispose();
+						
+					}else {
+						JOptionPane.showMessageDialog(null, "Erro no Registo");
+
+					}
+					
+					}
+				});
+		Registo.setOpaque(true);
+		Registo.setBorderPainted(false);
+		Registo.setBounds(213, 302, 117, 29);
+		MenuLogin.add(Registo);
+
+		
 		JLabel AddVendedor = new JLabel("New label");
 		AddVendedor.setBounds(113, 11, 123, 87);
 		MenuLogin.add(AddVendedor);
@@ -113,7 +118,7 @@ public class VendedorPage extends JFrame {
 			public void mouseClicked(MouseEvent arg0) {
 				VendedorPage vendor = new VendedorPage();
 				vendor.setVisible(true);
-				
+				dispose();
 			}
 		});
 				

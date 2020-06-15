@@ -6,10 +6,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -64,12 +68,15 @@ public class ProdutoPage extends JFrame {
 		
 		
 		JButton Back = new JButton("Cancelar");
-		Back.addActionListener(
-		new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Clicou no Back!");
+		Back.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+					GestaoPage gestao = new GestaoPage();
+					gestao.setVisible(true);
+					dispose();
+				
 			}
-		});
+			});
 		Back.setOpaque(true);
 		Back.setBorderPainted(false);
 		Back.setBounds(50, 302, 117, 29);
@@ -112,12 +119,30 @@ public class ProdutoPage extends JFrame {
 		JLabel AddProduto = new JLabel("AddProduto");
 		AddProduto.setBounds(131, 11, 98, 91);
 		MenuLogin.add(AddProduto);
-		AddProduto.setIcon(new ImageIcon(new ImageIcon("C:\\Use´krs\\gonga\\git\\Grupo1_DiurnoB\\ProjetoFinal\\add.png").getImage().getScaledInstance(AddProduto.getWidth(),AddProduto.getHeight(), Image.SCALE_DEFAULT)));
+		AddProduto.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\gonga\\git\\Grupo1_DiurnoB\\ProjetoFinal\\add.png").getImage().getScaledInstance(AddProduto.getWidth(),AddProduto.getHeight(), Image.SCALE_DEFAULT)));
 		AddProduto.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				ProdutoPage product = new ProdutoPage();
-				product.setVisible(true);
+				JFileChooser jFileChooser = new JFileChooser();
+				jFileChooser.setDialogTitle("save file");
+				int result = jFileChooser.showSaveDialog(null);
+				if (result == JFileChooser.APPROVE_OPTION) {
+					File file = jFileChooser.getSelectedFile();
+						FileOutputStream fileOutputStream;
+						try {
+							fileOutputStream = new FileOutputStream(file);
+							fileOutputStream.flush();
+							fileOutputStream.close();
+						} catch (Exception e) {
+							
+							e.printStackTrace();
+						}
+						
+						
+					
+						// TODO Auto-generated catch block
+						
+				}
 				
 			}
 		});
