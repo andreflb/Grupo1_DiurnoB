@@ -97,7 +97,7 @@ public class ProdutoPage extends JFrame {
 					GestaoPage gestao = new GestaoPage();
 					gestao.setVisible(true);
 				}else {
-				JOptionPane.showMessageDialog(null, "Erro");
+				JOptionPane.showMessageDialog(null, "Erro1");
 			}
 			}
 		});
