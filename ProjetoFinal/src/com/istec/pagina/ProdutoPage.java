@@ -92,12 +92,11 @@ public class ProdutoPage extends JFrame {
 		Registo.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JOptionPane.showMessageDialog(null, "Erro");
 				if(Dados.getinstance().ProdutoRegisto(designacao.getText(), codigo.getText(), preco.getText() , (String) tipo_produto.getSelectedItem() )) {
 					GestaoPage gestao = new GestaoPage();
 					gestao.setVisible(true);
 				}else {
-				JOptionPane.showMessageDialog(null, "Erro1");
+				JOptionPane.showMessageDialog(null, "Erro");
 			}
 			}
 		});

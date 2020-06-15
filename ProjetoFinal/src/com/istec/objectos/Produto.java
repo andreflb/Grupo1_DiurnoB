@@ -8,9 +8,9 @@ public class Produto implements Serializable{
 		String designacao;
 		String preco;
 		String codigo;
-		String Tipo_produto;
+		String tipo_produto;
 		
-		public Produto(String designacao, String preco, String codigo, String Tipo_produto) {
+		public Produto(String designacao, String preco, String codigo, String tipo_produto) {
 			super();
 			this.designacao = designacao;
 			this.preco = preco;
@@ -30,7 +30,7 @@ public class Produto implements Serializable{
 		}	
 		
 		public String getTipo_produto() {
-			return Tipo_produto;
+			return tipo_produto;
 		}
 
 }
