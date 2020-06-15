@@ -1,0 +1,128 @@
+package com.istec.pagina;
+
+import java.awt.Color;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import com.istec.main.Dados;
+import com.istec.paginas.componetes.PlaceholderPasswordField;
+import com.istec.paginas.componetes.PlaceholderTextField;
+
+
+public class ProdutoPage extends JFrame {
+
+	private JPanel contentPane;
+	private PlaceholderTextField designacao;
+	private PlaceholderTextField codigo;
+	private PlaceholderPasswordField preco;
+	
+	private JComboBox tipo_produto;
+
+	public ProdutoPage() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 923, 755);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel MenuLogin = new JPanel();
+		MenuLogin.setBackground(new Color(204, 204, 204, 150));
+		MenuLogin.setBounds((getWidth()/2)-(365/2), (getHeight()/2)-(379/2), 365, 379);
+		contentPane.add(MenuLogin);
+		MenuLogin.setLayout(null);
+		
+		
+		designacao = new PlaceholderTextField();
+		designacao.setBounds(99, 109, 179, 26);
+		designacao.setPlaceholder("Designação");
+		designacao.setOpaque(true);
+
+		MenuLogin.add(designacao);
+		designacao.setColumns(10);
+		
+		codigo = new PlaceholderTextField();
+		codigo.setBounds(99, 146, 179, 26);
+		codigo.setPlaceholder("Código");
+		codigo.setOpaque(true);
+
+		MenuLogin.add(codigo);
+		codigo.setColumns(10);
+		
+		
+		
+		JButton Back = new JButton("Cancelareeeeeeeeeeeee");
+		Back.addActionListener(
+		new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Clicou no Back!");
+			}
+		});
+		Back.setOpaque(true);
+		Back.setBorderPainted(false);
+		Back.setBounds(50, 302, 117, 29);
+		MenuLogin.add(Back);
+		
+		preco = new PlaceholderPasswordField();
+		preco.setOpaque(true);
+		preco.setPlaceholder("Preço");
+		preco.setBounds(99, 183, 179, 26);
+		MenuLogin.add(preco);
+		
+		JComboBox tipo_produto = new JComboBox();
+		tipo_produto.setBounds(99, 220, 179, 22);
+		MenuLogin.add(tipo_produto);
+		tipo_produto.addItem("Snacks");
+		tipo_produto.addItem("Drink");
+		tipo_produto.addItem("Hot Drink");
+		
+		
+		JButton Registo = new JButton("Registo");
+		Registo.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JOptionPane.showMessageDialog(null, tipo_produto.getSelectedItem());
+				if(Dados.getinstance().ProdutoRegisto(designacao.getText(), codigo.getText(), preco.getText() , (String) tipo_produto.getSelectedItem() )) {
+					GestaoPage gestao = new GestaoPage();
+					gestao.setVisible(true);
+				}else {
+				JOptionPane.showMessageDialog(null, "Erro");
+			}
+			}
+		});
+		
+		Registo.setOpaque(true);
+		Registo.setBorderPainted(false);
+		Registo.setBounds(213, 302, 117, 29);
+		MenuLogin.add(Registo);
+		
+		
+		JLabel AddProduto = new JLabel("AddProduto");
+		AddProduto.setBounds(131, 11, 98, 91);
+		MenuLogin.add(AddProduto);
+		AddProduto.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\gonga\\git\\Grupo1_DiurnoB\\ProjetoFinal\\add.png").getImage().getScaledInstance(AddProduto.getWidth(),AddProduto.getHeight(), Image.SCALE_DEFAULT)));
+		AddProduto.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				ProdutoPage product = new ProdutoPage();
+				product.setVisible(true);
+				
+			}
+		});
+		
+			
+		setResizable(false);
+	}
+}
