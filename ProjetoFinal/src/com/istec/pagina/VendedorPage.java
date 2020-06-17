@@ -9,6 +9,7 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -90,7 +91,7 @@ public class VendedorPage extends JFrame {
 		Registo.addActionListener(
 				new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-					if (Dados.getinstance().VendedorRegisto(username.getText(),  email.getText(), pwd.getText(), cfn.getText())) {
+					if (Dados.getinstance().VendedorRegisto(username.getText(), email.getText(), pwd.getText(), cfn.getText())) {
 						dispose(); 
 						GestaoPage gestao = new GestaoPage();
 						gestao.setVisible(true);
@@ -116,9 +117,18 @@ public class VendedorPage extends JFrame {
 		AddVendedor.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				VendedorPage vendor = new VendedorPage();
-				vendor.setVisible(true);
-				dispose();
+				JFileChooser jFileChooser = new JFileChooser();
+				jFileChooser.setDialogTitle("save file");
+				int result = jFileChooser.showSaveDialog(null);
+				if (result == JFileChooser.APPROVE_OPTION) {
+						try {
+				//			imagepath = jFileChooser.getSelectedFile().getAbsolutePath();
+						} catch (Exception e) {
+							
+							e.printStackTrace();
+						}
+						// TODO Auto-generated catch block
+				}
 			}
 		});
 				

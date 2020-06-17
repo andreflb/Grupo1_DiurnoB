@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
 import com.istec.objectos.Admin;
 import com.istec.objectos.Empresa;
@@ -19,9 +20,10 @@ public class Dados {
 	public static Dados instance;
 	public Empresa emp;	
 	public Vendedor vd;	
-	public Produto pd;	
+	public ArrayList<Produto> produtos;
 	public Dados() {
 		ler();
+		lerProd();
 	}
 	
 	public static Dados getinstance() {
@@ -93,18 +95,18 @@ public class Dados {
 		Vendedor  vend = new Vendedor(username, email, pwd, cfn);
 		this.vd = vend;
 		
-		guardar();
+		guardarVend();
 		return true;
 	}
 	
 	//VENDAS
-	public boolean ProdutoRegisto(String designacao, String codigo, String preco, String Tipo_produto) 
+	public boolean ProdutoRegisto(String designacao, String codigo, String preco, String Tipo_produto, String imagem) 
 	{
 		
-		Produto  prod = new Produto (designacao, preco, codigo, Tipo_produto);
-		this.pd = prod;
+		Produto  prod = new Produto (designacao, preco, codigo, Tipo_produto, imagem);
+		this.produtos.add(prod);
 		
-		guardar();
+		guardarProd();
 		return true;
 	}
 	
@@ -125,7 +127,7 @@ public class Dados {
 	public  void guardarProd() {
 		try {
 			ObjectOutputStream objs = new ObjectOutputStream(new FileOutputStream(new File("Produto.dat")));
-			objs.writeObject(vd);
+			objs.writeObject(this.produtos);
 			objs.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -135,5 +137,34 @@ public class Dados {
 			e.printStackTrace();
 		}
 	}
+	
+	public  boolean lerProd() {
+		try {
+			ObjectInputStream objs = new ObjectInputStream(new FileInputStream(new File("Produto.dat")));
+			ArrayList<Produto> result = (ArrayList<Produto>) objs.readObject();
+			this.produtos = result;
+			objs.close();
+			return true;
+		} catch (FileNotFoundException e) {
+			this.produtos = new ArrayList<Produto>();
+			// TODO Auto-generated catch block
+		return false;
+		} catch (IOException e) {
+			return false;
 
+		} catch (ClassNotFoundException e) {
+			return false;
+
+		}
+	}
+
+	public ArrayList<Produto> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(ArrayList<Produto> produtos) {
+		this.produtos = produtos;
+	}
+
+	
 }

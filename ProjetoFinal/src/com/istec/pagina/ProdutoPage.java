@@ -31,6 +31,7 @@ public class ProdutoPage extends JFrame {
 	private PlaceholderTextField designacao;
 	private PlaceholderTextField codigo;
 	private PlaceholderPasswordField preco;
+	private String imagepath;
 	
 	private JComboBox tipo_produto;
 
@@ -101,7 +102,7 @@ public class ProdutoPage extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				JOptionPane.showMessageDialog(null, tipo_produto.getSelectedItem());
-				if(Dados.getinstance().ProdutoRegisto(designacao.getText(), codigo.getText(), preco.getText() , (String) tipo_produto.getSelectedItem() )) {
+				if(Dados.getinstance().ProdutoRegisto(designacao.getText(), codigo.getText(), preco.getText() , (String) tipo_produto.getSelectedItem(), imagepath )) {
 					GestaoPage gestao = new GestaoPage();
 					gestao.setVisible(true);
 				}else {
@@ -127,23 +128,14 @@ public class ProdutoPage extends JFrame {
 				jFileChooser.setDialogTitle("save file");
 				int result = jFileChooser.showSaveDialog(null);
 				if (result == JFileChooser.APPROVE_OPTION) {
-					File file = jFileChooser.getSelectedFile();
-						FileOutputStream fileOutputStream;
 						try {
-							fileOutputStream = new FileOutputStream(file);
-							fileOutputStream.flush();
-							fileOutputStream.close();
+							imagepath = jFileChooser.getSelectedFile().getAbsolutePath();
 						} catch (Exception e) {
 							
 							e.printStackTrace();
 						}
-						
-						
-					
 						// TODO Auto-generated catch block
-						
 				}
-				
 			}
 		});
 		
