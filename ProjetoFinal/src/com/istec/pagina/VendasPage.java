@@ -2,6 +2,7 @@ package com.istec.pagina;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -19,6 +20,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import com.istec.main.Dados;
+import com.istec.objectos.Produto;
 import com.istec.paginas.componetes.PlaceholderPasswordField;
 import com.istec.paginas.componetes.PlaceholderTextField;
 
@@ -43,10 +46,14 @@ import javax.swing.JToolBar;
 import javax.swing.JTable;
 import javax.swing.JTable.PrintMode;
 import java.text.MessageFormat;
+import java.util.ArrayList;
+
 import javax.swing.table.DefaultTableModel;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.GridLayout;
+import javax.swing.SwingConstants;
 public class VendasPage extends JFrame {
 
 	private JPanel contentPane;
@@ -79,44 +86,92 @@ public class VendasPage extends JFrame {
 			contentPane.add(AdicionarProduto);
 			
 			JPanel Snacks = new JPanel();
+			FlowLayout flowLayout1 = (FlowLayout) Snacks.getLayout();
+			flowLayout1.setAlignment(FlowLayout.LEFT);
 			AdicionarProduto.addTab("Snacks", null, Snacks, null);
 			
+			
+			
+			if(Dados.getinstance().getProdutos() != null) {
+			
+			ArrayList<Produto> produtos = Dados.getinstance().getProdutos();
+			for (Produto p: produtos) {
+				JLabel lblNewLabel = new JLabel();
+				lblNewLabel.setBounds(0, 0, 40, 40);
+				lblNewLabel.setIcon(new ImageIcon(new ImageIcon(p.getImagem()).getImage().getScaledInstance(lblNewLabel.getWidth(),lblNewLabel.getHeight(), Image.SCALE_DEFAULT)));
+				Snacks.add(lblNewLabel);
+			}
+		}
+			
+			
 			JPanel Drinks = new JPanel();
+			FlowLayout flowLayout2 = (FlowLayout) Drinks.getLayout();
+			flowLayout2.setAlignment(FlowLayout.LEFT);
 			AdicionarProduto.addTab("Drinks", null, Drinks, null);
 			
+			
+			
+			if(Dados.getinstance().getProdutos() != null) {
+			
+			ArrayList<Produto> produtos = Dados.getinstance().getProdutos();
+			for (Produto p: produtos) {
+				JLabel lblNewLabel = new JLabel();
+				lblNewLabel.setBounds(0, 0, 40, 40);
+				lblNewLabel.setIcon(new ImageIcon(new ImageIcon(p.getImagem()).getImage().getScaledInstance(lblNewLabel.getWidth(),lblNewLabel.getHeight(), Image.SCALE_DEFAULT)));
+				Drinks.add(lblNewLabel);
+			}
+		}
+			
 			JPanel HotDrinks = new JPanel();
+			FlowLayout flowLayout3 = (FlowLayout) HotDrinks.getLayout();
+			flowLayout3.setAlignment(FlowLayout.LEFT);
 			AdicionarProduto.addTab("Hot Drinks", null, HotDrinks, null);
+			
+			
+			
+			if(Dados.getinstance().getProdutos() != null) {
+			
+			ArrayList<Produto> produtos = Dados.getinstance().getProdutos();
+			for (Produto p: produtos) {
+				JLabel lblNewLabel = new JLabel();
+				lblNewLabel.setBounds(0, 0, 40, 40);
+				lblNewLabel.setIcon(new ImageIcon(new ImageIcon(p.getImagem()).getImage().getScaledInstance(lblNewLabel.getWidth(),lblNewLabel.getHeight(), Image.SCALE_DEFAULT)));
+				HotDrinks.add(lblNewLabel);
+			}
+		}
+			
 			
 			JPanel panel = new JPanel();
 			panel.setBounds(10, 11, 283, 579);
 			contentPane.add(panel);
-			GridBagLayout gbl_panel = new GridBagLayout();
-			gbl_panel.columnWidths = new int[] {90, 90, 90};
-			gbl_panel.rowHeights = new int[] {30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30};
-			gbl_panel.columnWeights = new double[]{Double.MIN_VALUE};
-			gbl_panel.rowWeights = new double[]{Double.MIN_VALUE};
-			panel.setLayout(gbl_panel);
+			panel.setLayout(new GridLayout(0, 3, 0, 0));
 			
 			JLabel Nome = new JLabel("Nome");
-			GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-			gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
-			gbc_lblNewLabel.gridx = 0;
-			gbc_lblNewLabel.gridy = 0;
-			panel.add(Nome, gbc_lblNewLabel);
+			Nome.setVerticalAlignment(SwingConstants.TOP);
+			panel.add(Nome);
 			
 			JLabel Quantidade = new JLabel("Quantidade");
-			GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
-			gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
-			gbc_lblNewLabel_1.gridx = 1;
-			gbc_lblNewLabel_1.gridy = 0;
-			panel.add(Quantidade, gbc_lblNewLabel_1);
+			Quantidade.setVerticalAlignment(SwingConstants.TOP);
+			panel.add(Quantidade);
 			
 			JLabel Preco = new JLabel("Preco");
-			GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
-			gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 0);
-			gbc_lblNewLabel_2.gridx = 2;
-			gbc_lblNewLabel_2.gridy = 0;
-			panel.add(Preco, gbc_lblNewLabel_2);
+			Preco.setVerticalAlignment(SwingConstants.TOP);
+			panel.add(Preco);
+			
+			JButton Voltar = new JButton("Back");
+			Voltar.setBounds(805, 0, 89, 23);
+			contentPane.add( Voltar);
+			Voltar.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent arg0) {
+					GestaoPage gestaop = new GestaoPage();
+					gestaop.setVisible(true);
+					dispose();
+					
+				}
+			});
+			Voltar.setBounds(805, 0, 89, 23);
+			contentPane.add(Voltar);
 			
 			setResizable(false);
 		}

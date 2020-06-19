@@ -21,9 +21,11 @@ public class Dados {
 	public Empresa emp;	
 	public Vendedor vd;	
 	public ArrayList<Produto> produtos;
+	public ArrayList<Vendedor> vendedores;
 	public Dados() {
 		ler();
 		lerProd();
+		lerVend();
 	}
 	
 	public static Dados getinstance() {
@@ -89,11 +91,11 @@ public class Dados {
 	}
 	
 	//VENDEDOR
-	public boolean VendedorRegisto(String username, String email, String pwd, String cfn) 
+	public boolean VendedorRegisto(String username, String email, String pwd, String cfn, String imagemv) 
 	{
 		
-		Vendedor  vend = new Vendedor(username, email, pwd, cfn);
-		this.vd = vend;
+		Vendedor  vend = new Vendedor(username, email, pwd, cfn, imagemv);
+		this.vendedores.add(vend);
 		
 		guardarVend();
 		return true;
@@ -157,6 +159,25 @@ public class Dados {
 
 		}
 	}
+	public  boolean lerVend() {
+		try {
+			ObjectInputStream objs = new ObjectInputStream(new FileInputStream(new File("Vendedor.dat")));
+			ArrayList<Vendedor> result1 = (ArrayList<Vendedor>) objs.readObject();
+			this.vendedores = result1;
+			objs.close();
+			return true;
+		} catch (FileNotFoundException e) {
+			this.vendedores = new ArrayList<Vendedor>();
+			// TODO Auto-generated catch block
+		return false;
+		} catch (IOException e) {
+			return false;
+
+		} catch (ClassNotFoundException e) {
+			return false;
+
+		}
+	}
 
 	public ArrayList<Produto> getProdutos() {
 		return produtos;
@@ -164,6 +185,14 @@ public class Dados {
 
 	public void setProdutos(ArrayList<Produto> produtos) {
 		this.produtos = produtos;
+	}
+
+	public ArrayList<Vendedor> getVendedores() {
+		return vendedores;
+	}
+
+	public void setVendedores(ArrayList<Vendedor> vendedores) {
+		this.vendedores = vendedores;
 	}
 
 	
