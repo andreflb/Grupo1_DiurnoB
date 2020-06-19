@@ -27,6 +27,7 @@ public class VendedorPage extends JFrame {
 	private PlaceholderPasswordField cfn;
 	private PlaceholderTextField email;
 	private PlaceholderTextField username;
+	private String imagepath;
 	
 	public VendedorPage() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -90,8 +91,10 @@ public class VendedorPage extends JFrame {
 		JButton Registo = new JButton("Registo");
 		Registo.addActionListener(
 				new ActionListener() {
+					
+
 					public void actionPerformed(ActionEvent e) {
-					if (Dados.getinstance().VendedorRegisto(username.getText(), email.getText(), pwd.getText(), cfn.getText())) {
+					if (Dados.getinstance().VendedorRegisto(username.getText(), email.getText(), pwd.getText(), cfn.getText(), imagepath )) {
 						dispose(); 
 						GestaoPage gestao = new GestaoPage();
 						gestao.setVisible(true);

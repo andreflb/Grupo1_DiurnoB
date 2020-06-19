@@ -33,7 +33,7 @@ public class ProdutoPage extends JFrame {
 	private PlaceholderPasswordField preco;
 	private String imagepath;
 	
-	private JComboBox tipo_produto;
+	private JComboBox Tipo_produto;
 
 	public ProdutoPage() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -89,20 +89,21 @@ public class ProdutoPage extends JFrame {
 		preco.setBounds(99, 183, 179, 26);
 		MenuLogin.add(preco);
 		
-		JComboBox tipo_produto = new JComboBox();
-		tipo_produto.setBounds(99, 220, 179, 22);
-		MenuLogin.add(tipo_produto);
-		tipo_produto.addItem("Snacks");
-		tipo_produto.addItem("Drink");
-		tipo_produto.addItem("Hot Drink");
+		JComboBox Tipo_produto = new JComboBox();
+		Tipo_produto.setBounds(99, 220, 179, 22);
+		MenuLogin.add(Tipo_produto);
+		Tipo_produto.addItem("Snacks");
+		Tipo_produto.addItem("Drink");
+		Tipo_produto.addItem("Hot Drink");
 		
 		
 		JButton Registo = new JButton("Registo");
 		Registo.addMouseListener(new MouseAdapter() {
+			@SuppressWarnings("deprecation")
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JOptionPane.showMessageDialog(null, tipo_produto.getSelectedItem());
-				if(Dados.getinstance().ProdutoRegisto(designacao.getText(), codigo.getText(), preco.getText() , (String) tipo_produto.getSelectedItem(), imagepath )) {
+				JOptionPane.showMessageDialog(null, Tipo_produto.getSelectedItem());
+				if(Dados.getinstance().ProdutoRegisto(designacao.getText(), codigo.getText(), preco.getText() , (String) Tipo_produto.getSelectedItem(), imagepath )) {
 					GestaoPage gestao = new GestaoPage();
 					gestao.setVisible(true);
 				}else {

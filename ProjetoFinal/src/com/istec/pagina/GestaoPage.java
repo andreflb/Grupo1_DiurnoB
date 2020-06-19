@@ -1,6 +1,7 @@
 package com.istec.pagina;
 
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,12 +20,8 @@ import javax.swing.border.EmptyBorder;
 
 import com.istec.main.Dados;
 import com.istec.objectos.Produto;
-import com.istec.objectos.Vendedor;
-
-import java.awt.FlowLayout;
-import javax.swing.SwingConstants;
 	
-// cara feiabjkbkblbnl
+
 	@SuppressWarnings("serial")
 	public class GestaoPage extends JFrame {
 
@@ -41,15 +38,18 @@ import javax.swing.SwingConstants;
 			
 			JButton Manage = new JButton("Manage");
 			Manage.setBounds(20, 13, 117, 29);
-			contentPane.add(Manage);
-			Manage.addActionListener(
-			new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					JOptionPane.showMessageDialog(null, "Clicou no Manage!");
+			contentPane.add( Manage);
+			 Manage.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent arg0) {
+					VendasPage vendasp = new VendasPage();
+					vendasp.setVisible(true);
+					dispose();
+					
 				}
 			});
-			Manage.setOpaque(true);
-			Manage.setBorderPainted(false);
+			 Manage.setBounds(20, 13, 117, 29);
+			contentPane.add(Manage);
 			
 			JButton Stats = new JButton("Stats");
 			Stats.setBounds(20, 53, 117, 29);
@@ -76,14 +76,13 @@ import javax.swing.SwingConstants;
 			flowLayout.setAlignment(FlowLayout.LEFT);
 			AdicionarProduto.addTab("Snacks", null, Snacks, null);
 			
-			JLabel lblNewLabel_1 = new JLabel("New label");
-			Snacks.add(lblNewLabel_1);
+			
 			
 			if(Dados.getinstance().getProdutos() != null) {
 			
 			ArrayList<Produto> produtos = Dados.getinstance().getProdutos();
 			for (Produto p: produtos) {
-				JLabel lblNewLabel = new JLabel(p.getDesignacao());
+				JLabel lblNewLabel = new JLabel();
 				lblNewLabel.setBounds(0, 0, 40, 40);
 				lblNewLabel.setIcon(new ImageIcon(new ImageIcon(p.getImagem()).getImage().getScaledInstance(lblNewLabel.getWidth(),lblNewLabel.getHeight(), Image.SCALE_DEFAULT)));
 				Snacks.add(lblNewLabel);
@@ -91,37 +90,35 @@ import javax.swing.SwingConstants;
 		}
 			
 			JPanel HotDrinks = new JPanel();
+			FlowLayout flowLayout2 = (FlowLayout)HotDrinks.getLayout();
+			flowLayout2.setAlignment(FlowLayout.LEFT);
 			AdicionarProduto.addTab("Hot Drinks", null, HotDrinks, null);
-			
-			JLabel lblNewLabel_2 = new JLabel("New label");
-			HotDrinks.add(lblNewLabel_2);
 			
 			if(Dados.getinstance().getProdutos() != null) {
 				
 				ArrayList<Produto> produtos = Dados.getinstance().getProdutos();
 				for (Produto p: produtos) {
-					JLabel lblNewLabel = new JLabel(p.getDesignacao());
-					lblNewLabel.setBounds(0, 0, 40, 40);
-					lblNewLabel.setIcon(new ImageIcon(new ImageIcon(p.getImagem()).getImage().getScaledInstance(lblNewLabel.getWidth(),lblNewLabel.getHeight(), Image.SCALE_DEFAULT)));
-					HotDrinks.add(lblNewLabel);
+					JLabel lblNewLabel_2 = new JLabel();
+					lblNewLabel_2.setBounds(0, 0, 40, 40);
+					lblNewLabel_2.setIcon(new ImageIcon(new ImageIcon(p.getImagem()).getImage().getScaledInstance(lblNewLabel_2.getWidth(),lblNewLabel_2.getHeight(), Image.SCALE_DEFAULT)));
+					HotDrinks.add(lblNewLabel_2);
 				}
 			}
 			
-			
+				
 			JPanel Drinks = new JPanel();
+			FlowLayout flowLayout3 = (FlowLayout)Drinks.getLayout();
+			flowLayout3.setAlignment(FlowLayout.LEFT);
 			AdicionarProduto.addTab("Drinks", null, Drinks, null);
-			
-			JLabel lblNewLabel_3 = new JLabel("New label");
-			Drinks.add(lblNewLabel_3);
 			
 			if(Dados.getinstance().getProdutos() != null) {
 				
 				ArrayList<Produto> produtos = Dados.getinstance().getProdutos();
 				for (Produto p: produtos) {
-					JLabel lblNewLabel = new JLabel(p.getDesignacao());
-					lblNewLabel.setBounds(0, 0, 40, 40);
-					lblNewLabel.setIcon(new ImageIcon(new ImageIcon(p.getImagem()).getImage().getScaledInstance(lblNewLabel.getWidth(),lblNewLabel.getHeight(), Image.SCALE_DEFAULT)));
-					Drinks.add(lblNewLabel);
+					JLabel lblNewLabel_3 = new JLabel();
+					lblNewLabel_3.setBounds(0, 0, 40, 40);
+					lblNewLabel_3.setIcon(new ImageIcon(new ImageIcon(p.getImagem()).getImage().getScaledInstance(lblNewLabel_3.getWidth(),lblNewLabel_3.getHeight(), Image.SCALE_DEFAULT)));
+					Drinks.add(lblNewLabel_3);
 				}
 			}		
 			
