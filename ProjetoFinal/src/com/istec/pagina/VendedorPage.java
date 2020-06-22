@@ -93,6 +93,7 @@ public class VendedorPage extends JFrame {
 				new ActionListener() {
 					
 
+					@SuppressWarnings("deprecation")
 					public void actionPerformed(ActionEvent e) {
 					if (Dados.getinstance().VendedorRegisto(username.getText(), email.getText(), pwd.getText(), cfn.getText(), imagepath )) {
 						dispose(); 
@@ -113,7 +114,7 @@ public class VendedorPage extends JFrame {
 		MenuLogin.add(Registo);
 
 		
-		JLabel AddVendedor = new JLabel("New label");
+		JLabel AddVendedor = new JLabel("Adicionar Vendedor");
 		AddVendedor.setBounds(113, 11, 123, 87);
 		MenuLogin.add(AddVendedor);
 		AddVendedor.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\gonga\\git\\Grupo1_DiurnoB\\ProjetoFinal\\addUser.png").getImage().getScaledInstance(AddVendedor.getWidth(),AddVendedor.getHeight(), Image.SCALE_DEFAULT)));
