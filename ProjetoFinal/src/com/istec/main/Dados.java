@@ -18,7 +18,8 @@ import com.istec.objectos.Vendedor;
 public class Dados {
 	
 	public static Dados instance;
-	public Empresa emp;	
+	public Empresa emp;
+	public Vendedor vend;
 	public ArrayList<Produto> produtos;
 	public ArrayList<Vendedor> vendedores;
 	public Dados() {
