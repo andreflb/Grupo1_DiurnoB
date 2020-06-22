@@ -1,59 +1,24 @@
 package com.istec.pagina;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
-import javax.swing.border.EmptyBorder;
-
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-import java.awt.Image;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import com.istec.main.Dados;
 import com.istec.objectos.Produto;
-import com.istec.paginas.componetes.PlaceholderPasswordField;
-import com.istec.paginas.componetes.PlaceholderTextField;
-
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.ImageIcon;
-import java.awt.Color;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import javax.swing.JPasswordField;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Font;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.Choice;
-import javax.swing.JComboBox;
-import javax.swing.JTabbedPane;
-import java.awt.Toolkit;
-import javax.swing.JToggleButton;
-import javax.swing.JToolBar;
-import javax.swing.JTable;
-import javax.swing.JTable.PrintMode;
-import java.text.MessageFormat;
-import java.util.ArrayList;
-
-import javax.swing.table.DefaultTableModel;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-import java.awt.GridLayout;
-import javax.swing.SwingConstants;
 public class VendasPage extends JFrame {
 
 	private JPanel contentPane;

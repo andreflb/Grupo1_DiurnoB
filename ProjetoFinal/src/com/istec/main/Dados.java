@@ -18,8 +18,8 @@ import com.istec.objectos.Vendedor;
 public class Dados {
 	
 	public static Dados instance;
-	public Empresa emp;	
-	public Vendedor vd;	
+	public Empresa emp;
+	public Vendedor vend;
 	public ArrayList<Produto> produtos;
 	public ArrayList<Vendedor> vendedores;
 	public Dados() {
@@ -115,7 +115,7 @@ public class Dados {
 	public  void guardarVend() {
 		try {
 			ObjectOutputStream objs = new ObjectOutputStream(new FileOutputStream(new File("Vendedor.dat")));
-			objs.writeObject(vd);
+			objs.writeObject(this.vendedores);
 			objs.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
