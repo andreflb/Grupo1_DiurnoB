@@ -71,10 +71,16 @@ import javax.swing.SwingConstants;
 			vendedorlabel.setBounds(147, 13, 610, 82);
 			contentPane.add(vendedorlabel);
 			
-			JPanel Vendedorv = new JPanel();
+			JLabel Vendedorv = new JLabel();
 			FlowLayout flowLayout5 = (FlowLayout) Vendedorv.getLayout();
 			flowLayout5.setAlignment(FlowLayout.LEFT);
 			vendedorlabel.addTab("VendedorV", null, Vendedorv, null);
+			
+			JLabel lblNewLabel_1 = new JLabel("New label");
+			Vendedorv.add(lblNewLabel_1);
+			
+			JLabel lblNewLabel_4 = new JLabel("New label");
+			Vendedorv.add(lblNewLabel_4);
 													
 			if(Dados.getinstance().getVendedores() != null) {
 				
