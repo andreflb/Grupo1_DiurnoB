@@ -20,6 +20,7 @@ import javax.swing.border.EmptyBorder;
 
 import com.istec.main.Dados;
 import com.istec.objectos.Produto;
+import com.istec.objectos.Vendedor;
 
 	
 
@@ -65,11 +66,23 @@ import com.istec.objectos.Produto;
 			Stats.setBorderPainted(false);
  
 			
-			JTabbedPane vendedorlabel = new JTabbedPane(JTabbedPane.TOP);
+			JPanel vendedorlabel = new JPanel();
 			vendedorlabel.setBackground(Color.WHITE);
 			vendedorlabel.setBounds(147, 13, 610, 82);
-			contentPane.add(vendedorlabel);
 			
+			
+			
+			
+            if(Dados.getinstance().getVendedores() != null) {
+
+                ArrayList<Vendedor> vendedores = Dados.getinstance().getVendedores();
+                for (Vendedor p: vendedores) {
+                    JLabel lblNewLabel5 = new JLabel();
+                    lblNewLabel5.setBounds(0, 0, 40, 40);
+                    lblNewLabel5.setIcon(new ImageIcon(new ImageIcon(p.getImagemv()).getImage().getScaledInstance(lblNewLabel5.getWidth(),lblNewLabel5.getHeight(), Image.SCALE_DEFAULT)));
+             
+                }
+            }
 			
 																
 			JTabbedPane AdicionarProduto = new JTabbedPane(JTabbedPane.TOP);
@@ -168,6 +181,13 @@ import com.istec.objectos.Produto;
 			});
 			
 			contentPane.add(AddProduto);
+			
+			JPanel panel = new JPanel();
+			panel.setBounds(147, 13, 600, 75);
+			contentPane.add(panel);
+			
+			JLabel vendelabel = new JLabel("New label");
+			panel.add(vendelabel);
 			
 			setResizable(false);
 		}
