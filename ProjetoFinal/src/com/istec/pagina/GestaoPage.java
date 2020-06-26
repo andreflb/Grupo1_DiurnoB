@@ -20,9 +20,7 @@ import javax.swing.border.EmptyBorder;
 
 import com.istec.main.Dados;
 import com.istec.objectos.Produto;
-import com.istec.objectos.Vendedor;
 
-import javax.swing.SwingConstants;
 	
 
 	@SuppressWarnings("serial")
@@ -68,34 +66,12 @@ import javax.swing.SwingConstants;
  
 			
 			JTabbedPane vendedorlabel = new JTabbedPane(JTabbedPane.TOP);
+			vendedorlabel.setBackground(Color.WHITE);
 			vendedorlabel.setBounds(147, 13, 610, 82);
 			contentPane.add(vendedorlabel);
 			
-			JLabel Vendedorv = new JLabel();
-			FlowLayout flowLayout5 = (FlowLayout) Vendedorv.getLayout();
-			flowLayout5.setAlignment(FlowLayout.LEFT);
-			vendedorlabel.addTab("VendedorV", null, Vendedorv, null);
 			
-			JLabel lblNewLabel_1 = new JLabel("New label");
-			Vendedorv.add(lblNewLabel_1);
-			
-			JLabel lblNewLabel_4 = new JLabel("New label");
-			Vendedorv.add(lblNewLabel_4);
-													
-			if(Dados.getinstance().getVendedores() != null) {
-				
-				ArrayList<Vendedor> vendedores = Dados.getinstance().getVendedores();
-				for (Vendedor p: vendedores) {
-					JLabel lblNewLabel5 = new JLabel();
-					lblNewLabel5.setBounds(0, 0, 40, 40);
-					lblNewLabel5.setIcon(new ImageIcon(new ImageIcon(p.getImagemv()).getImage().getScaledInstance(lblNewLabel5.getWidth(),lblNewLabel5.getHeight(), Image.SCALE_DEFAULT)));
-					Vendedorv.add(lblNewLabel5);
-				}
-			}		
-	
-			
-			
-			
+																
 			JTabbedPane AdicionarProduto = new JTabbedPane(JTabbedPane.TOP);
 			AdicionarProduto.setBounds(146, 106, 684, 385);
 			contentPane.add(AdicionarProduto);
@@ -110,11 +86,17 @@ import javax.swing.SwingConstants;
 			if(Dados.getinstance().getProdutos() != null) {
 			
 			ArrayList<Produto> produtos = Dados.getinstance().getProdutos();
+			
 			for (Produto p: produtos) {
+				 System.out.println(p.getTipo_produto());
+				if (p.getTipo_produto().equals("Snacks"))
+				{	
+			
 				JLabel lblNewLabel = new JLabel();
 				lblNewLabel.setBounds(0, 0, 40, 40);
 				lblNewLabel.setIcon(new ImageIcon(new ImageIcon(p.getImagem()).getImage().getScaledInstance(lblNewLabel.getWidth(),lblNewLabel.getHeight(), Image.SCALE_DEFAULT)));
 				Snacks.add(lblNewLabel);
+			}
 			}
 		}
 			
@@ -127,11 +109,14 @@ import javax.swing.SwingConstants;
 				
 				ArrayList<Produto> produtos = Dados.getinstance().getProdutos();
 				for (Produto p: produtos) {
+					if (p.getTipo_produto().equals("Hot Drinks"))
+					{	
 					JLabel lblNewLabel_2 = new JLabel();
 					lblNewLabel_2.setBounds(0, 0, 40, 40);
 					lblNewLabel_2.setIcon(new ImageIcon(new ImageIcon(p.getImagem()).getImage().getScaledInstance(lblNewLabel_2.getWidth(),lblNewLabel_2.getHeight(), Image.SCALE_DEFAULT)));
 					HotDrinks.add(lblNewLabel_2);
 				}
+			}
 			}
 			
 				
@@ -144,13 +129,14 @@ import javax.swing.SwingConstants;
 				
 				ArrayList<Produto> produtos = Dados.getinstance().getProdutos();
 				for (Produto p: produtos) {
+					if (p.getTipo_produto().equals("Drinks")){
 					JLabel lblNewLabel_3 = new JLabel();
 					lblNewLabel_3.setBounds(0, 0, 40, 40);
 					lblNewLabel_3.setIcon(new ImageIcon(new ImageIcon(p.getImagem()).getImage().getScaledInstance(lblNewLabel_3.getWidth(),lblNewLabel_3.getHeight(), Image.SCALE_DEFAULT)));
 					Drinks.add(lblNewLabel_3);
 				}
 			}		
-			
+ }
 			JLabel AddVendedor = new JLabel("AddVendedor");
 			AddVendedor.setBounds(767, 13, 86, 66);
 			AddVendedor.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\gonga\\git\\Grupo1_DiurnoB\\ProjetoFinal\\addUser.png").getImage().getScaledInstance(AddVendedor.getWidth(),AddVendedor.getHeight(), Image.SCALE_DEFAULT)));

@@ -2,7 +2,6 @@ package com.istec.pagina;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -14,7 +13,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
-import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import com.istec.main.Dados;
@@ -107,21 +105,36 @@ public class VendasPage extends JFrame {
 			
 			
 			JPanel panel = new JPanel();
+			panel.setLayout(null);
+			panel.setBackground(Color.WHITE);
 			panel.setBounds(10, 11, 283, 579);
 			contentPane.add(panel);
-			panel.setLayout(new GridLayout(0, 3, 0, 0));
 			
-			JLabel Nome = new JLabel("Nome");
-			Nome.setVerticalAlignment(SwingConstants.TOP);
-			panel.add(Nome);
 			
-			JLabel Quantidade = new JLabel("Quantidade");
-			Quantidade.setVerticalAlignment(SwingConstants.TOP);
-			panel.add(Quantidade);
 			
-			JLabel Preco = new JLabel("Preco");
-			Preco.setVerticalAlignment(SwingConstants.TOP);
-			panel.add(Preco);
+			
+			
+			JLabel nome = new JLabel("Name");
+			nome.setBounds(22, 3, 45, 13);
+			panel.add(nome);
+			
+			JLabel quantidade = new JLabel("Qt");
+			quantidade.setBounds(153, 3, 45, 13);
+			panel.add(quantidade);
+			
+			JLabel preco = new JLabel("Price");
+			preco.setBounds(208, 3, 45, 13);
+			panel.add(preco);
+			
+			JPanel produtosPane = new JPanel();
+			produtosPane.setBounds(8, 27, 245, 530);
+			produtosPane.setBorder(null);
+			panel.add(produtosPane);
+			produtosPane.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 5));
+			
+			
+			
+			
 			
 			JButton Voltar = new JButton("Back");
 			Voltar.setBounds(805, 0, 89, 23);

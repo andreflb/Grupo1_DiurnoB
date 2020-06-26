@@ -17,6 +17,7 @@ public class Produto implements Serializable{
 			this.preco = preco;
 			this.codigo = codigo;
 			this.imagem = imagem;
+			this.Tipo_produto = Tipo_produto;
 		}
 
 		public String getDesignacao() {

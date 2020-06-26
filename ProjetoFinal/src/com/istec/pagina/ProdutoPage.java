@@ -93,8 +93,8 @@ public class ProdutoPage extends JFrame {
 		Tipo_produto.setBounds(99, 220, 179, 22);
 		MenuLogin.add(Tipo_produto);
 		Tipo_produto.addItem("Snacks");
-		Tipo_produto.addItem("Drink");
-		Tipo_produto.addItem("Hot Drink");
+		Tipo_produto.addItem("Drinks");
+		Tipo_produto.addItem("Hot Drinks");
 		
 		
 		JButton Registo = new JButton("Registo");

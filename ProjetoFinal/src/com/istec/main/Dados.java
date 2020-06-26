@@ -21,7 +21,7 @@ public class Dados {
 	public Empresa emp;
 	public Vendedor vend;
 	public ArrayList<Produto> produtos;
-	public ArrayList<Vendedor> vendedores;
+	public ArrayList<Vendedor> vendedores = new ArrayList<Vendedor>();
 	public Dados() {
 		ler();
 		lerProd();
@@ -95,6 +95,9 @@ public class Dados {
 	{
 		
 		Vendedor  vend = new Vendedor(username, email, pwd, cfn, imagemv);
+		if (this.vendedores == null) {
+			this.vendedores = new ArrayList<Vendedor>();
+		}
 		this.vendedores.add(vend);
 		
 		guardarVend();
@@ -106,6 +109,10 @@ public class Dados {
 	{
 		
 		Produto  prod = new Produto (designacao, preco, codigo, Tipo_produto, imagem);
+		if (this.produtos == null) {
+			this.produtos = new ArrayList<Produto>();
+		}
+		
 		this.produtos.add(prod);
 		
 		guardarProd();
