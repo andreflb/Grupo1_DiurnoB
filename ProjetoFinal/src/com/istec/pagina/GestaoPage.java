@@ -22,6 +22,7 @@ import com.istec.main.Dados;
 import com.istec.objectos.Produto;
 import com.istec.objectos.Vendedor;
 
+
 	
 
 	@SuppressWarnings("serial")
@@ -65,25 +66,6 @@ import com.istec.objectos.Vendedor;
 			Stats.setOpaque(true);
 			Stats.setBorderPainted(false);
  
-			
-			JPanel vendedorlabel = new JPanel();
-			vendedorlabel.setBackground(Color.WHITE);
-			vendedorlabel.setBounds(147, 13, 610, 82);
-			
-			
-			
-			
-            if(Dados.getinstance().getVendedores() != null) {
-
-                ArrayList<Vendedor> vendedores = Dados.getinstance().getVendedores();
-                for (Vendedor p: vendedores) {
-                    JLabel lblNewLabel5 = new JLabel();
-                    lblNewLabel5.setBounds(0, 0, 40, 40);
-                    lblNewLabel5.setIcon(new ImageIcon(new ImageIcon(p.getImagemv()).getImage().getScaledInstance(lblNewLabel5.getWidth(),lblNewLabel5.getHeight(), Image.SCALE_DEFAULT)));
-             
-                }
-            }
-			
 																
 			JTabbedPane AdicionarProduto = new JTabbedPane(JTabbedPane.TOP);
 			AdicionarProduto.setBounds(146, 106, 684, 385);
@@ -183,13 +165,29 @@ import com.istec.objectos.Vendedor;
 			contentPane.add(AddProduto);
 			
 			JPanel panel = new JPanel();
-			panel.setBounds(147, 13, 600, 75);
+			panel.setBounds(147, 13, 561, 83);
 			contentPane.add(panel);
 			
-			JLabel vendelabel = new JLabel("New label");
-			panel.add(vendelabel);
-			
 			setResizable(false);
+			
+			 if(Dados.getinstance().getProdutos() != null) { 
+		        ArrayList<Vendedor> vendedores = Dados.getinstance().getVendedores();
+		        
+		        
+		        for (Vendedor v : vendedores) {
+	
+		        	JLabel lblVendedor = new JLabel();        	
+		        	lblVendedor.setSize(80, 80);
+		        	lblVendedor.setHorizontalAlignment(JLabel.CENTER);
+		        	lblVendedor.setVerticalTextPosition(JLabel.BOTTOM);
+		        	lblVendedor.setHorizontalTextPosition(JLabel.CENTER);
+		    		Image Imagemv = new ImageIcon(v.getImagemv()).getImage().getScaledInstance(lblVendedor.getWidth(),lblVendedor.getHeight(), Image.SCALE_DEFAULT);
+		    		lblVendedor.setIcon(new ImageIcon(Imagemv));
+		    		panel.add(lblVendedor);
+			}
+			
+			}
 		}
-	}
+	}		
 
+	
