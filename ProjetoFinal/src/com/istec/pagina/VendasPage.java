@@ -59,13 +59,15 @@ public class VendasPage extends JFrame {
 			
 			ArrayList<Produto> produtos = Dados.getinstance().getProdutos();
 			for (Produto p: produtos) {
+				if (p.getTipo_produto().equals("Snacks"))
+				{	
 				JLabel lblNewLabel = new JLabel();
 				lblNewLabel.setBounds(0, 0, 40, 40);
 				lblNewLabel.setIcon(new ImageIcon(new ImageIcon(p.getImagem()).getImage().getScaledInstance(lblNewLabel.getWidth(),lblNewLabel.getHeight(), Image.SCALE_DEFAULT)));
 				Snacks.add(lblNewLabel);
 			}
+			}
 		}
-			
 			
 			JPanel Drinks = new JPanel();
 			FlowLayout flowLayout2 = (FlowLayout) Drinks.getLayout();
@@ -78,13 +80,14 @@ public class VendasPage extends JFrame {
 			
 			ArrayList<Produto> produtos = Dados.getinstance().getProdutos();
 			for (Produto p: produtos) {
+				if (p.getTipo_produto().equals("Drinks")){
 				JLabel lblNewLabel = new JLabel();
 				lblNewLabel.setBounds(0, 0, 40, 40);
 				lblNewLabel.setIcon(new ImageIcon(new ImageIcon(p.getImagem()).getImage().getScaledInstance(lblNewLabel.getWidth(),lblNewLabel.getHeight(), Image.SCALE_DEFAULT)));
 				Drinks.add(lblNewLabel);
 			}
 		}
-			
+			}
 			JPanel HotDrinks = new JPanel();
 			FlowLayout flowLayout3 = (FlowLayout) HotDrinks.getLayout();
 			flowLayout3.setAlignment(FlowLayout.LEFT);
@@ -96,13 +99,15 @@ public class VendasPage extends JFrame {
 			
 			ArrayList<Produto> produtos = Dados.getinstance().getProdutos();
 			for (Produto p: produtos) {
+				if (p.getTipo_produto().equals("Hot Drinks"))
+				{	
 				JLabel lblNewLabel = new JLabel();
 				lblNewLabel.setBounds(0, 0, 40, 40);
 				lblNewLabel.setIcon(new ImageIcon(new ImageIcon(p.getImagem()).getImage().getScaledInstance(lblNewLabel.getWidth(),lblNewLabel.getHeight(), Image.SCALE_DEFAULT)));
 				HotDrinks.add(lblNewLabel);
 			}
 		}
-			
+			}
 			
 			JPanel panel = new JPanel();
 			panel.setLayout(null);

@@ -22,9 +22,6 @@ import com.istec.main.Dados;
 import com.istec.objectos.Produto;
 import com.istec.objectos.Vendedor;
 
-
-	
-
 	@SuppressWarnings("serial")
 	public class GestaoPage extends JFrame {
 
@@ -176,18 +173,19 @@ import com.istec.objectos.Vendedor;
 		        
 		        for (Vendedor v : vendedores) {
 	
-		        	JLabel lblVendedor = new JLabel();        	
+		        	JLabel lblVendedor = new JLabel(v.getUsername());         	
 		        	lblVendedor.setSize(80, 80);
 		        	lblVendedor.setHorizontalAlignment(JLabel.CENTER);
 		        	lblVendedor.setVerticalTextPosition(JLabel.BOTTOM);
 		        	lblVendedor.setHorizontalTextPosition(JLabel.CENTER);
-		    		Image Imagemv = new ImageIcon(v.getImagemv()).getImage().getScaledInstance(lblVendedor.getWidth(),lblVendedor.getHeight(), Image.SCALE_DEFAULT);
-		    		lblVendedor.setIcon(new ImageIcon(Imagemv));
+		    		Image imagemv = new ImageIcon(v.getImagemv()).getImage().getScaledInstance(lblVendedor.getWidth(),lblVendedor.getHeight(), Image.SCALE_DEFAULT);
+		    		lblVendedor.setIcon(new ImageIcon(imagemv));
 		    		panel.add(lblVendedor);
-			}
 			
 			}
 		}
-	}		
+ }	
+	}	
+	
 
 	
