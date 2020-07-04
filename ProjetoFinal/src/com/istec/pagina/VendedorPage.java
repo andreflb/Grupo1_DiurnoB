@@ -57,7 +57,7 @@ public class VendedorPage extends JFrame {
 		email.setBounds(99, 146, 179, 26);
 		email.setPlaceholder("Email");
 		email.setOpaque(true);
-
+		
 		MenuLogin.add(email);
 		email.setColumns(10);
 		
